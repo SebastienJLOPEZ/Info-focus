@@ -27,299 +27,558 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="icon" href="./favicon_io/favicon.ico" type="image/x-icon" />
+
     <!-- Import files -->
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="./style/output.css" />
     <title>InfoFocus • Doutes de tes certitudes</title>
   </head>
-  <body class="grid gap-8 place-items-center">
-    <header class="">
-      <div class=""></div>
-      <div>
-        <img src="./icons/logo.png" alt="" />
+  <body class="w-full place-items-center">
+    <header
+      class="grid lg:grid-cols-[auto_1fr] items-center py-8 px-6 w-full grid-cols-3"
+    >
+      <!-- Menu burger -->
+      <button class="block lg:hidden" aria-label="Ouvrir le menu">
+        <svg
+          width="26"
+          height="25"
+          viewBox="0 0 16 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 1.54199V2.54199H16V0.541992H0V1.54199ZM0 7.54199V8.54199H16V6.54199H0V7.54199ZM0 13.542V14.542H16V12.542H0V13.542Z"
+            fill="#015FE8"
+          />
+        </svg>
+      </button>
+
+      <!-- Logo -->
+      <div class="grid justify-center lg:justify-start">
+        <a href="/" aria-label="Retour à l'accueil">
+          <svg
+            width="150"
+            height="67"
+            viewBox="0 0 130 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0.461628C0 0.159084 0.151389 0.0078125 0.454167 0.0078125H4.14638C4.46598 0.0078125 4.63419 0.159084 4.63419 0.461628V19.5471C4.63419 19.8496 4.47439 20.0009 4.14638 20.0009H0.454167C0.151389 20.0009 0 19.8496 0 19.5471V0.461628Z"
+              fill="#141433"
+            />
+            <path
+              d="M8.74609 0.461628C8.74609 0.159084 8.89748 0.0078125 9.20026 0.0078125H12.7747C13.0439 0.0078125 13.2373 0.100256 13.3719 0.293548L21.8917 12.2944H21.9506V0.461628C21.9506 0.159084 22.102 0.0078125 22.4048 0.0078125H26.097C26.4166 0.0078125 26.5848 0.159084 26.5848 0.461628V19.5471C26.5848 19.8496 26.425 20.0009 26.097 20.0009H22.4973C22.2534 20.0009 22.0599 19.9085 21.9254 19.7152L13.4055 7.73948H13.3803V19.5387C13.3803 19.8412 13.2205 19.9925 12.8925 19.9925H9.20026C8.89748 19.9925 8.74609 19.8412 8.74609 19.5387V0.461628Z"
+              fill="#141433"
+            />
+            <path
+              d="M31.17 20.0093C30.8672 20.0093 30.7158 19.858 30.7158 19.5555V0.461628C30.7158 0.159084 30.8672 0.0078125 31.17 0.0078125H44.3829C44.6857 0.0078125 44.8371 0.159084 44.8371 0.461628V3.83163C44.8371 4.13417 44.6857 4.28544 44.3829 4.28544H35.35V8.45382H43.155C43.4577 8.45382 43.6091 8.60509 43.6091 8.90763V12.2524C43.6091 12.5802 43.4577 12.7398 43.155 12.7398H35.35V19.5387C35.35 19.8412 35.1902 19.9925 34.8622 19.9925H31.17V20.0093Z"
+              fill="#141433"
+            />
+            <path
+              d="M31.1817 46.6215C30.8789 46.6215 30.7275 46.4702 30.7275 46.1677V27.0822C30.7275 26.7797 30.8789 26.6284 31.1817 26.6284H44.3946C44.6974 26.6284 44.8488 26.7797 44.8488 27.0822V30.4522C44.8488 30.7548 44.6974 30.906 44.3946 30.906H35.3617V35.0744H43.1667C43.4695 35.0744 43.6208 35.2257 43.6208 35.5282V38.873C43.6208 39.2008 43.4695 39.3605 43.1667 39.3605H35.3617V46.1593C35.3617 46.4618 35.2019 46.6131 34.8739 46.6131H31.1817V46.6215Z"
+              fill="#141433"
+            />
+            <path
+              d="M85.9261 27.2335C87.4232 27.889 88.5838 28.8218 89.3996 30.0236C90.2154 31.2254 90.6276 32.6036 90.6276 34.1668V34.3096C90.6276 34.4273 90.5855 34.5113 90.5098 34.5786C90.4341 34.6458 90.3416 34.6794 90.2239 34.6794H86.3634C86.2289 34.6794 86.1195 34.6458 86.0354 34.5617C85.9513 34.4861 85.884 34.3937 85.8504 34.276C85.5476 33.1751 84.9336 32.2843 84.0085 31.6035C83.0833 30.9312 82.0068 30.5867 80.7873 30.5867C79.6434 30.5867 78.6342 30.8304 77.7679 31.3262C76.9016 31.8221 76.2288 32.528 75.7494 33.444C75.27 34.3601 75.0345 35.419 75.0345 36.6123C75.0345 37.8057 75.27 38.873 75.7494 39.7806C76.2288 40.6967 76.9016 41.4026 77.7679 41.8984C78.6342 42.3943 79.6434 42.638 80.7873 42.638C82.0068 42.638 83.0833 42.3018 84.0085 41.6211C84.9336 40.9404 85.5476 40.058 85.8504 38.9486C85.884 38.831 85.9513 38.7385 86.0354 38.6629C86.1195 38.5873 86.2289 38.5452 86.3634 38.5452H90.2239C90.3416 38.5452 90.4341 38.5873 90.5098 38.6629C90.5855 38.7385 90.6276 38.831 90.6276 38.9486V39.0915C90.3416 40.6546 89.7444 42.0329 88.8277 43.2179C87.911 44.4112 86.7587 45.3357 85.371 45.9912C83.9748 46.6467 82.4441 46.9744 80.7704 46.9744C78.7099 46.9744 76.8932 46.5458 75.312 45.6886C73.7308 44.8314 72.5029 43.6212 71.6366 42.0497C70.7704 40.4782 70.333 38.6713 70.333 36.6375C70.333 34.6038 70.7619 32.7633 71.6198 31.1918C72.4777 29.6202 73.6972 28.4016 75.2784 27.536C76.8596 26.6704 78.693 26.2334 80.7704 26.2334C82.7133 26.2334 84.4374 26.5612 85.9345 27.2167L85.9261 27.2335Z"
+              fill="#141433"
+            />
+            <path
+              d="M93.8652 27.0739C93.8652 26.7714 94.0166 26.6201 94.3194 26.6201H98.0116C98.3396 26.6201 98.4994 26.7714 98.4994 27.0739V38.1924C98.4994 39.6967 98.8106 40.806 99.433 41.5036C100.055 42.2095 100.989 42.5625 102.251 42.5625C103.512 42.5625 104.454 42.2095 105.085 41.5036C105.716 40.7976 106.027 39.6967 106.027 38.1924V27.0739C106.027 26.7714 106.178 26.6201 106.481 26.6201H110.173C110.493 26.6201 110.661 26.7714 110.661 27.0739V38.5034C110.661 41.2094 109.929 43.2936 108.457 44.7643C106.986 46.2518 104.917 46.9914 102.251 46.9914C99.5844 46.9914 97.5154 46.2518 96.0604 44.7727C94.6054 43.2936 93.8736 41.2094 93.8736 38.5034V27.0739H93.8652Z"
+              fill="#141433"
+            />
+            <path
+              d="M113.706 40.7976C113.706 40.5539 113.857 40.4278 114.16 40.4278H117.818C118.088 40.4278 118.256 40.5707 118.331 40.8564C118.676 42.2683 119.82 42.9742 121.763 42.9742C122.831 42.9742 123.638 42.7809 124.177 42.4027C124.723 42.0246 124.993 41.4867 124.993 40.806C124.993 39.621 124.109 38.8899 122.335 38.6041L119.501 38.1503C115.665 37.52 113.756 35.6039 113.756 32.4104C113.756 30.5279 114.429 29.032 115.775 27.9227C117.12 26.8218 119.03 26.2671 121.511 26.2671C123.992 26.2671 125.783 26.7881 127.112 27.8386C128.449 28.8891 129.198 30.3934 129.374 32.3516V32.4944C129.374 32.7214 129.231 32.839 128.946 32.839H125.253C124.984 32.839 124.824 32.6877 124.765 32.3852C124.572 30.9985 123.487 30.301 121.502 30.301C119.517 30.301 118.416 30.9985 118.416 32.3852C118.416 32.9399 118.634 33.3769 119.072 33.6962C119.509 34.024 120.3 34.2677 121.443 34.4358L124.278 34.8896C127.844 35.461 129.627 37.3772 129.627 40.6295C129.627 42.6717 128.937 44.2348 127.566 45.3441C126.195 46.4535 124.269 46.9997 121.788 46.9997C119.307 46.9997 117.465 46.4787 116.086 45.4282C114.707 44.3777 113.908 42.8818 113.697 40.9404V40.7976H113.706Z"
+              fill="#141433"
+            />
+            <path
+              d="M68.5296 10.8152C68.5044 12.7817 67.8988 14.6726 66.755 16.4039C66.6457 16.5635 66.57 16.5972 66.3765 16.5131C64.4253 15.7063 62.5666 15.8492 60.8761 17.1518C59.7406 18.0258 59.1519 19.2276 59.0426 20.6563C59.0257 20.858 58.9837 20.9336 58.765 20.9252C58.0754 20.9168 57.3857 20.9672 56.7044 20.9252C55.1821 20.8244 53.7439 20.3874 52.4067 19.6562C50.5648 18.6477 49.135 17.2359 48.1678 15.3618C47.251 13.5801 46.9062 11.6808 47.0408 9.68068C47.1669 7.74776 47.7809 5.99133 48.8995 4.41978C50.2115 2.5625 51.9862 1.3019 54.1392 0.59597C55.6784 0.0917306 57.2679 -0.109965 58.8828 0.0581147C61.2629 0.310234 63.3824 1.16744 65.1738 2.78101C66.8307 4.26851 67.8519 6.15745 68.3061 8.32567C68.4743 9.11565 68.5464 9.89078 68.5128 10.8068L68.5296 10.8152ZM57.7978 16.0425C60.8592 16.0761 63.3403 13.723 63.2815 10.4202C63.231 7.29395 61.0106 4.96604 57.7473 4.96604C54.5598 4.96604 52.2048 7.4116 52.2553 10.6051C52.2973 13.7146 54.7196 16.0845 57.7978 16.0425Z"
+              fill="#015FE8"
+            />
+            <path
+              d="M64.1134 24.2529C62.4397 24.3034 60.909 22.9251 60.951 21.0258C60.9847 19.2442 62.3472 17.8659 64.1807 17.8995C65.9637 17.9331 67.3178 19.2358 67.3094 21.0762C67.301 22.9923 65.9301 24.2025 64.1134 24.2529Z"
+              fill="#03FFFF"
+            />
+            <path
+              d="M64.844 43.9742C62.8423 45.9744 60.3612 46.9744 57.4091 46.9744C54.457 46.9744 51.9759 45.9828 49.9742 43.991C47.9725 41.9993 46.9717 39.5369 46.9717 36.6039C46.9717 33.6709 47.9725 31.2086 49.9742 29.2168C51.9759 27.2251 54.457 26.2334 57.4091 26.2334C60.3612 26.2334 62.8423 27.2251 64.844 29.2168C66.8457 31.2086 67.8466 33.6709 67.8466 36.6039C67.8466 39.5369 66.8457 41.9993 64.844 43.9742ZM53.288 40.9152C54.3393 42.0581 55.7102 42.6296 57.4091 42.6296C59.108 42.6296 60.4789 42.0665 61.5303 40.932C62.5816 39.7974 63.103 38.3519 63.103 36.6039C63.103 34.8559 62.5816 33.4104 61.5303 32.2759C60.4789 31.1413 59.108 30.5783 57.4091 30.5783C55.7102 30.5783 54.3393 31.1413 53.288 32.2759C52.2367 33.4104 51.7152 34.8559 51.7152 36.6039C51.7152 38.3519 52.2367 39.7974 53.288 40.9152Z"
+              fill="#141433"
+            />
+            <path
+              d="M53.8223 9.98922C54.018 8.91277 55.0749 6.70117 57.7366 6.46631"
+              stroke="#03FFFF"
+              stroke-width="0.587152"
+              stroke-linecap="round"
+            />
+          </svg>
+        </a>
       </div>
-      <div class="book-icon"></div>
+
+      <!-- Navigation (cachée en mobile) -->
+      <div class="grid grid-cols-[auto_1fr] justify-self-end items-center">
+        <nav
+          class="grid grid-cols-[auto_1fr] justify-self-end items-center"
+          aria-label="Navigation principale"
+        >
+          <ul class="hidden lg:grid lg:grid-cols-4 lg:gap-8">
+            <li>
+              <a href="#mission" class="hover:text-blue-600">Notre mission</a>
+            </li>
+            <li>
+              <a href="#about" class="hover:text-blue-600">Qui sommes-nous ?</a>
+            </li>
+            <li><a href="#tools" class="hover:text-blue-600">Nos outils</a></li>
+            <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+          </ul>
+          <div>
+            <button aria-label="Voir le livre">
+              <svg
+                class="lg:w-4"
+                width="30"
+                height="36"
+                viewBox="0 0 16 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <!-- Book Icon SVG -->
+              </svg>
+            </button>
+          </div>
+        </nav>
+        <!-- Icône Book -->
+        <div>
+          <button>
+            <svg
+              class="lg:w-4"
+              width="30"
+              height="36"
+              viewBox="0 0 16 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.66667 0.5C1.95942 0.5 1.28115 0.776562 0.781048 1.26884C0.280951 1.76113 0 2.42881 0 3.125V18.875C0 19.5712 0.280951 20.2389 0.781048 20.7312C1.28115 21.2234 1.95942 21.5 2.66667 21.5H15.3333C15.5101 21.5 15.6797 21.4309 15.8047 21.3078C15.9298 21.1847 16 21.0178 16 20.8438C16 20.6697 15.9298 20.5028 15.8047 20.3797C15.6797 20.2566 15.5101 20.1875 15.3333 20.1875H2.66667C2.31304 20.1875 1.97391 20.0492 1.72386 19.8031C1.47381 19.5569 1.33333 19.2231 1.33333 18.875H14.6667C15.0203 18.875 15.3594 18.7367 15.6095 18.4906C15.8595 18.2444 16 17.9106 16 17.5625V3.125C16 2.42881 15.719 1.76113 15.219 1.26884C14.7189 0.776562 14.0406 0.5 13.3333 0.5H2.66667ZM3.66667 3.78125H12.3333C12.5985 3.78125 12.8529 3.88496 13.0404 4.06957C13.228 4.25417 13.3333 4.50455 13.3333 4.76562C13.3333 5.0267 13.228 5.27708 13.0404 5.46168C12.8529 5.64629 12.5985 5.75 12.3333 5.75H3.66667C3.40145 5.75 3.1471 5.64629 2.95956 5.46168C2.77202 5.27708 2.66667 5.0267 2.66667 4.76562C2.66667 4.50455 2.77202 4.25417 2.95956 4.06957C3.1471 3.88496 3.40145 3.78125 3.66667 3.78125Z"
+                fill="#015FE8"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
     </header>
 
-    <!-- Section Vidéo -->
-    <section class="grid place-items-center w-screen h-screen bg-indigo-900">
-      <h2 class="text-4xl font-bold text-white">Vidéo Motion</h2>
-    </section>
-
-    <!-- Section Campagne de sensibilisation -->
-    <section class="md:w-5/6 grid gap-4 p-6 place-items-center text-center">
-      <h3
-        class="justify-self-start w-full text-lg font-medium text-blue-500 text-left"
+    <dialog
+      id="popup"
+      class="fixed inset-0 z-50 grid items-center justify-center bg-black/50"
+    >
+      <div
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
       >
-        Actualité
-      </h3>
-      <div class="w-5/6 p-4 space-y-4">
-        <h2 class="section-h2 text-2xl font-bold text-gray-900">
-          Campagne de sensibilisation
-        </h2>
-        <p class="section-text text-xs text-gray-700 leading-relaxed">
-          Découvrez comment les biais cognitifs, comme le biais de confirmation,
-          influencent votre perception de l’information. Trop souvent, nous
-          cherchons à conforter nos croyances plutôt qu’à vérifier les faits.
-          Regardez notre vidéo explicative pour apprendre à dépasser ces biais
-          et mieux discerner la vérité.
-        </p>
-        <button
-          class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
-        >
-          Voir notre vidéo
-        </button>
-      </div>
-    </section>
-
-    <!-- Section ARCOM et Info Focus : une mission commune -->
-    <section
-      class="grid sm:grid-cols-2 place-items-center gap-8 text-center sm:text-left w-4/5 p-4 space-y-4"
-    >
-      <div class="space-y-4 sm:order-2">
-        <img
-          src="img/illu-mission-section.png"
-          alt="Illustration de la mission"
-          class="w-full max-w-[300px] h-auto"
-        />
-      </div>
-      <div class="w-5/6 p-4 space-y-4 sm:order-1">
-        <h2 class="section-h2 text-2xl font-bold text-gray-900">
-          Arcom et Info Focus : <br />
-          une mission commune
-        </h2>
-        <p class="section-text text-xs text-gray-700 leading-relaxed w-full">
-          Avec INFO FOCUS, nous mettons en lumière les biais qui affectent votre
-          compréhension de l’information. Ensemble, construisons une culture
-          numérique où chaque utilisateur joue un rôle actif dans la lutte
-          contre la désinformation.
-        </p>
-        <button
-          class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
-        >
-          En savoir plus
-        </button>
-      </div>
-    </section>
-
-    <!-- Section Identifier vos biais -->
-    <section
-      class="grid place-items-center text-center w-4/5 p-4 space-y-4 bg-[#e9effd] sm:rounded-lg"
-    >
-      <div class="justify-self-start w-full sm:w-3/5 sm:justify-center mx-auto">
-        <img
-          src="./icons/test-section-icon.png"
-          alt=""
-          class="max-w-[54px] h-auto"
-        />
-      </div>
-      <div class="grid place-items-center gap-6 sm:w-1/2">
-        <h2 class="section-h2 text-2xl font-bold text-gray-900">
-          Identifier vos biais
-        </h2>
-        <h3 class="section-h3 text-blue-600 text-lg font-semibold text-center">
-          Savez-vous si vos choix sont influencés par vos croyances ?
-        </h3>
-        <p class="section-text text-xs text-gray-700 leading-relaxed">
-          Testez-vous en 3 minutes ! Ce mini-quiz vous aide à comprendre comment
-          vos biais peuvent influencer votre perception des informations.
-        </p>
-        <button
-          class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
-        >
-          Faites le test !
-        </button>
-      </div>
-    </section>
-
-    <!-- Section Des outils pour vérifier l'information -->
-    <section
-      class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4"
-    >
-      <h2 class="section-h2 text-2xl font-bold text-gray-900">
-        Des outils pour vérifier l'information
-      </h2>
-      <p class="section-text text-xs text-gray-700 leading-relaxed">
-        Explorez nos ressources pour développer votre esprit critique.
-      </p>
-      <div class="space-y-4">
-        <img
-          src="img/illu-tools-section.png"
-          alt="Illustration de la mission"
-          class="w-full max-w-[300px] h-auto"
-        />
-      </div>
-      <div class="grid sm:grid-cols-2 sm:grid-rows-2 gap-4 p-4">
-        <!-- Bloc 1 -->
-        <div
-          class="grid gap-2 sm:col-span-1 sm:row-span-2 bg-blue-50 p-4 rounded-lg text-left"
-        >
-          <h3 class="section-tools-h3 font-semibold text-gray-900">
-            Nos fact-checkers
-          </h3>
-          <p class="section-text text-gray-700 text-left">
-            Découvrez l'engagement de notre équipe de fact-checkers, dédiée à la
-            lutte contre la désinformation et à la promotion d'une information
-            fiable et transparente.
-          </p>
-          <p class="hidden sm:block section-text text-gray-700 text-left">
-            Nos experts analysent en profondeur les contenus pour identifier et
-            corriger les fausses nouvelles, s'appuient sur des sources fiables,
-            des outils innovants et une méthode rigoureuse, afin de garantir une
-            information accessible à tous.
-          </p>
-        </div>
-
-        <!-- Bloc 2 -->
-        <div
-          class="grid sm:col-span-1 sm:row-span-1 gap-2 bg-blue-50 p-4 rounded-lg text-left"
-        >
-          <h3 class="section-tool-h3 font-inter font-semibold text-gray-900">
-            Nos sources
-          </h3>
-          <p class="section-text text-gray-700 text-left">
-            Accédez à une liste de médias et de plateformes certifiés pour
-            élargir votre vision sur un sujet.
-          </p>
-        </div>
-
-        <!-- Bloc 3 -->
-        <div
-          class="grid col-span-2 sm:col-span-1 sm:row-span-1 gap-2 bg-blue-50 p-4 rounded-lg text-left"
-        >
-          <h3 class="section-tools-h3 font-semibold text-gray-900">
-            Tutoriels
-          </h3>
-          <p class="section-text text-gray-700">
-            Apprenez à détecter les fake news, analyser les sources, et sortir
-            des bulles d'information.
-          </p>
-        </div>
-      </div>
-      <button
-        class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
-      >
-        Découvrir nos outils
-      </button>
-    </section>
-
-    <!-- Section Participez au mouvement -->
-    <section
-      class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4"
-    >
-      <div class="grid gap-6 w-3/5">
-        <h2 class="section-h2 text-2xl font-bold text-gray-900">
-          Participez au mouvement
-        </h2>
-        <h3 class="section-h3 text-blue-600 text-xs font-semibold text-center">
-          Vous n'êtes pas seuls dans cette lutte contre la désinformation.
-        </h3>
-        <p
-          class="hidden sm:block section-text text-xs text-gray-700 leading-relaxed"
-        >
-          Rejoignez une communauté d’utilisateurs engagés. Partagez vos
-          expériences, apprenez des autres, et ensemble, créons un espace
-          informationnel plus sûr.
-        </p>
-      </div>
-
-      <div class="section-movement-card grid gap-4">
-        <div class="grid gap-2 bg-white shadow-lg p-4 rounded-lg">
-          <h3
-            class="text-lg font-bold text-gray-900 sm:text-blue-700 text-left"
+        <div class="bg-white w-11/12 max-w-md p-6 rounded-lg grid gap-6">
+          <!-- Close button -->
+          <button
+            class="self-start justify-self-end text-gray-600 text-lg"
+            aria-label="Fermer la modale"
           >
-            Bob
+            ✕
+          </button>
+
+          <div class="grid place-items-center">
+            <svg
+              width="150"
+              height="67"
+              viewBox="0 0 130 47"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0.461628C0 0.159084 0.151389 0.0078125 0.454167 0.0078125H4.14638C4.46598 0.0078125 4.63419 0.159084 4.63419 0.461628V19.5471C4.63419 19.8496 4.47439 20.0009 4.14638 20.0009H0.454167C0.151389 20.0009 0 19.8496 0 19.5471V0.461628Z"
+                fill="#141433"
+              />
+              <path
+                d="M8.74609 0.461628C8.74609 0.159084 8.89748 0.0078125 9.20026 0.0078125H12.7747C13.0439 0.0078125 13.2373 0.100256 13.3719 0.293548L21.8917 12.2944H21.9506V0.461628C21.9506 0.159084 22.102 0.0078125 22.4048 0.0078125H26.097C26.4166 0.0078125 26.5848 0.159084 26.5848 0.461628V19.5471C26.5848 19.8496 26.425 20.0009 26.097 20.0009H22.4973C22.2534 20.0009 22.0599 19.9085 21.9254 19.7152L13.4055 7.73948H13.3803V19.5387C13.3803 19.8412 13.2205 19.9925 12.8925 19.9925H9.20026C8.89748 19.9925 8.74609 19.8412 8.74609 19.5387V0.461628Z"
+                fill="#141433"
+              />
+              <path
+                d="M31.17 20.0093C30.8672 20.0093 30.7158 19.858 30.7158 19.5555V0.461628C30.7158 0.159084 30.8672 0.0078125 31.17 0.0078125H44.3829C44.6857 0.0078125 44.8371 0.159084 44.8371 0.461628V3.83163C44.8371 4.13417 44.6857 4.28544 44.3829 4.28544H35.35V8.45382H43.155C43.4577 8.45382 43.6091 8.60509 43.6091 8.90763V12.2524C43.6091 12.5802 43.4577 12.7398 43.155 12.7398H35.35V19.5387C35.35 19.8412 35.1902 19.9925 34.8622 19.9925H31.17V20.0093Z"
+                fill="#141433"
+              />
+              <path
+                d="M31.1817 46.6215C30.8789 46.6215 30.7275 46.4702 30.7275 46.1677V27.0822C30.7275 26.7797 30.8789 26.6284 31.1817 26.6284H44.3946C44.6974 26.6284 44.8488 26.7797 44.8488 27.0822V30.4522C44.8488 30.7548 44.6974 30.906 44.3946 30.906H35.3617V35.0744H43.1667C43.4695 35.0744 43.6208 35.2257 43.6208 35.5282V38.873C43.6208 39.2008 43.4695 39.3605 43.1667 39.3605H35.3617V46.1593C35.3617 46.4618 35.2019 46.6131 34.8739 46.6131H31.1817V46.6215Z"
+                fill="#141433"
+              />
+              <path
+                d="M85.9261 27.2335C87.4232 27.889 88.5838 28.8218 89.3996 30.0236C90.2154 31.2254 90.6276 32.6036 90.6276 34.1668V34.3096C90.6276 34.4273 90.5855 34.5113 90.5098 34.5786C90.4341 34.6458 90.3416 34.6794 90.2239 34.6794H86.3634C86.2289 34.6794 86.1195 34.6458 86.0354 34.5617C85.9513 34.4861 85.884 34.3937 85.8504 34.276C85.5476 33.1751 84.9336 32.2843 84.0085 31.6035C83.0833 30.9312 82.0068 30.5867 80.7873 30.5867C79.6434 30.5867 78.6342 30.8304 77.7679 31.3262C76.9016 31.8221 76.2288 32.528 75.7494 33.444C75.27 34.3601 75.0345 35.419 75.0345 36.6123C75.0345 37.8057 75.27 38.873 75.7494 39.7806C76.2288 40.6967 76.9016 41.4026 77.7679 41.8984C78.6342 42.3943 79.6434 42.638 80.7873 42.638C82.0068 42.638 83.0833 42.3018 84.0085 41.6211C84.9336 40.9404 85.5476 40.058 85.8504 38.9486C85.884 38.831 85.9513 38.7385 86.0354 38.6629C86.1195 38.5873 86.2289 38.5452 86.3634 38.5452H90.2239C90.3416 38.5452 90.4341 38.5873 90.5098 38.6629C90.5855 38.7385 90.6276 38.831 90.6276 38.9486V39.0915C90.3416 40.6546 89.7444 42.0329 88.8277 43.2179C87.911 44.4112 86.7587 45.3357 85.371 45.9912C83.9748 46.6467 82.4441 46.9744 80.7704 46.9744C78.7099 46.9744 76.8932 46.5458 75.312 45.6886C73.7308 44.8314 72.5029 43.6212 71.6366 42.0497C70.7704 40.4782 70.333 38.6713 70.333 36.6375C70.333 34.6038 70.7619 32.7633 71.6198 31.1918C72.4777 29.6202 73.6972 28.4016 75.2784 27.536C76.8596 26.6704 78.693 26.2334 80.7704 26.2334C82.7133 26.2334 84.4374 26.5612 85.9345 27.2167L85.9261 27.2335Z"
+                fill="#141433"
+              />
+              <path
+                d="M93.8652 27.0739C93.8652 26.7714 94.0166 26.6201 94.3194 26.6201H98.0116C98.3396 26.6201 98.4994 26.7714 98.4994 27.0739V38.1924C98.4994 39.6967 98.8106 40.806 99.433 41.5036C100.055 42.2095 100.989 42.5625 102.251 42.5625C103.512 42.5625 104.454 42.2095 105.085 41.5036C105.716 40.7976 106.027 39.6967 106.027 38.1924V27.0739C106.027 26.7714 106.178 26.6201 106.481 26.6201H110.173C110.493 26.6201 110.661 26.7714 110.661 27.0739V38.5034C110.661 41.2094 109.929 43.2936 108.457 44.7643C106.986 46.2518 104.917 46.9914 102.251 46.9914C99.5844 46.9914 97.5154 46.2518 96.0604 44.7727C94.6054 43.2936 93.8736 41.2094 93.8736 38.5034V27.0739H93.8652Z"
+                fill="#141433"
+              />
+              <path
+                d="M113.706 40.7976C113.706 40.5539 113.857 40.4278 114.16 40.4278H117.818C118.088 40.4278 118.256 40.5707 118.331 40.8564C118.676 42.2683 119.82 42.9742 121.763 42.9742C122.831 42.9742 123.638 42.7809 124.177 42.4027C124.723 42.0246 124.993 41.4867 124.993 40.806C124.993 39.621 124.109 38.8899 122.335 38.6041L119.501 38.1503C115.665 37.52 113.756 35.6039 113.756 32.4104C113.756 30.5279 114.429 29.032 115.775 27.9227C117.12 26.8218 119.03 26.2671 121.511 26.2671C123.992 26.2671 125.783 26.7881 127.112 27.8386C128.449 28.8891 129.198 30.3934 129.374 32.3516V32.4944C129.374 32.7214 129.231 32.839 128.946 32.839H125.253C124.984 32.839 124.824 32.6877 124.765 32.3852C124.572 30.9985 123.487 30.301 121.502 30.301C119.517 30.301 118.416 30.9985 118.416 32.3852C118.416 32.9399 118.634 33.3769 119.072 33.6962C119.509 34.024 120.3 34.2677 121.443 34.4358L124.278 34.8896C127.844 35.461 129.627 37.3772 129.627 40.6295C129.627 42.6717 128.937 44.2348 127.566 45.3441C126.195 46.4535 124.269 46.9997 121.788 46.9997C119.307 46.9997 117.465 46.4787 116.086 45.4282C114.707 44.3777 113.908 42.8818 113.697 40.9404V40.7976H113.706Z"
+                fill="#141433"
+              />
+              <path
+                d="M68.5296 10.8152C68.5044 12.7817 67.8988 14.6726 66.755 16.4039C66.6457 16.5635 66.57 16.5972 66.3765 16.5131C64.4253 15.7063 62.5666 15.8492 60.8761 17.1518C59.7406 18.0258 59.1519 19.2276 59.0426 20.6563C59.0257 20.858 58.9837 20.9336 58.765 20.9252C58.0754 20.9168 57.3857 20.9672 56.7044 20.9252C55.1821 20.8244 53.7439 20.3874 52.4067 19.6562C50.5648 18.6477 49.135 17.2359 48.1678 15.3618C47.251 13.5801 46.9062 11.6808 47.0408 9.68068C47.1669 7.74776 47.7809 5.99133 48.8995 4.41978C50.2115 2.5625 51.9862 1.3019 54.1392 0.59597C55.6784 0.0917306 57.2679 -0.109965 58.8828 0.0581147C61.2629 0.310234 63.3824 1.16744 65.1738 2.78101C66.8307 4.26851 67.8519 6.15745 68.3061 8.32567C68.4743 9.11565 68.5464 9.89078 68.5128 10.8068L68.5296 10.8152ZM57.7978 16.0425C60.8592 16.0761 63.3403 13.723 63.2815 10.4202C63.231 7.29395 61.0106 4.96604 57.7473 4.96604C54.5598 4.96604 52.2048 7.4116 52.2553 10.6051C52.2973 13.7146 54.7196 16.0845 57.7978 16.0425Z"
+                fill="#015FE8"
+              />
+              <path
+                d="M64.1134 24.2529C62.4397 24.3034 60.909 22.9251 60.951 21.0258C60.9847 19.2442 62.3472 17.8659 64.1807 17.8995C65.9637 17.9331 67.3178 19.2358 67.3094 21.0762C67.301 22.9923 65.9301 24.2025 64.1134 24.2529Z"
+                fill="#03FFFF"
+              />
+              <path
+                d="M64.844 43.9742C62.8423 45.9744 60.3612 46.9744 57.4091 46.9744C54.457 46.9744 51.9759 45.9828 49.9742 43.991C47.9725 41.9993 46.9717 39.5369 46.9717 36.6039C46.9717 33.6709 47.9725 31.2086 49.9742 29.2168C51.9759 27.2251 54.457 26.2334 57.4091 26.2334C60.3612 26.2334 62.8423 27.2251 64.844 29.2168C66.8457 31.2086 67.8466 33.6709 67.8466 36.6039C67.8466 39.5369 66.8457 41.9993 64.844 43.9742ZM53.288 40.9152C54.3393 42.0581 55.7102 42.6296 57.4091 42.6296C59.108 42.6296 60.4789 42.0665 61.5303 40.932C62.5816 39.7974 63.103 38.3519 63.103 36.6039C63.103 34.8559 62.5816 33.4104 61.5303 32.2759C60.4789 31.1413 59.108 30.5783 57.4091 30.5783C55.7102 30.5783 54.3393 31.1413 53.288 32.2759C52.2367 33.4104 51.7152 34.8559 51.7152 36.6039C51.7152 38.3519 52.2367 39.7974 53.288 40.9152Z"
+                fill="#141433"
+              />
+              <path
+                d="M53.8223 9.98922C54.018 8.91277 55.0749 6.70117 57.7366 6.46631"
+                stroke="#03FFFF"
+                stroke-width="0.587152"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+
+          <h3 class="text-lg font-bold text-center text-gray-900">
+            Inscrivez-vous à notre newsletter !
           </h3>
-          <p class="text-left text-sm text-gray-700">
-            “J'ai longtemps cru tout ce que je voyais en ligne. Grâce à
-            InfoFocus, j'ai appris à vérifier les sources . Maintenant,
-            j'analyse avant de partager et me sens plus confiant dans ma façon
-            de consommer l'information.”
+
+          <div class="grid justify-center">
+            <img
+              src="./icons/pop-up-newsletter.png"
+              alt="Illustration vérification d'info"
+              class="w-20 h-auto"
+            />
+          </div>
+
+          <p class="text-sm text-center text-gray-700">
+            Découvrez nos astuces et ressources pour déjouer les pièges de
+            l'info.
           </p>
+
+          <div class="grid place-items-center">
+            <button
+              class="bg-blue-600 text-white text-sm font-semibold px-6 py-3 rounded-full"
+            >
+              S’inscrire
+            </button>
+          </div>
         </div>
       </div>
-      <button
-        class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
-      >
-        Donne ton avis !
-      </button>
-    </section>
+    </dialog>
 
-    <!-- Section Le saviez-vous ? -->
-    <section
-      class="section-info grid place-items-center w-full text-center p-4 space-y-4 bg-[#e9effd]"
-    >
-      <div class="justify-self-start w-full sm:w-1/5 sm:justify-center mx-auto">
-        <img
-          src="./icons/stats-section-icon.png"
-          alt=""
-          class="max-w-[64px] h-auto"
-        />
-      </div>
-      <div class="grid place-items-center gap-6 w-4/5 sm:w-1/3">
-        <h2 class="section-h2 text-2xl font-bold text-gray-900">
-          Le saviez-vous ?
-        </h2>
-        <h3 class="section-h3 text-blue-600 text-lg font-semibold text-center">
-          Quelques chiffres sur l'impact de la désinformations.
+    <main class="grid gap-8 w-full place-items-center">
+      <!-- Section Vidéo -->
+      <section class="grid place-items-center w-full h-screen bg-indigo-900">
+        <h2 class="text-4xl font-bold text-white">Vidéo Motion</h2>
+      </section>
+
+      <!-- Section Campagne de sensibilisation -->
+      <section class="md:w-5/6 grid gap-4 p-6 place-items-center text-center">
+        <h3
+          class="justify-self-start w-full text-lg font-medium text-blue-500 text-left"
+        >
+          Actualité
         </h3>
-        <div
-          class="text-8xl font-bold text-[#015FE8] drop-shadow-[0_4px_4px_rgba(1,95,232,0.2)] font-inter"
-        >
-          <span>5%</span>
+        <div class="w-5/6 p-4 space-y-4">
+          <h2 class="section-h2 text-2xl font-bold text-gray-900">
+            Campagne de sensibilisation
+          </h2>
+          <p class="section-text text-xs text-gray-700 leading-relaxed">
+            Découvrez comment les biais cognitifs, comme le biais de
+            confirmation, influencent votre perception de l’information. Trop
+            souvent, nous cherchons à conforter nos croyances plutôt qu’à
+            vérifier les faits. Regardez notre vidéo explicative pour apprendre
+            à dépasser ces biais et mieux discerner la vérité.
+          </p>
+          <button
+            class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-full"
+          >
+            Voir notre vidéo
+          </button>
         </div>
-        <p
-          class="section-text text-xs text-gray-700 leading-relaxed font-inter"
-        >
-          Seulement 5% des utilisateurs vérifient systématiquement les
-          informations qu’ils partagent en ligne.
-        </p>
-      </div>
-    </section>
+      </section>
 
-    <!-- FAQ section -->
-    <section
-      class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4"
-    >
-      <h2 class="section-h2 text-2xl font-bold text-gray-900">Notre FAQ</h2>
-      <p class="section-text text-xs text-gray-700 leading-relaxed">
-        Comprendre pour mieux agir : cette section répond à vos questions.
-      </p>
-      <div class="grid gap-2 sm:w-1/2">
-        <div
-          class="grid grid-cols-[1fr_auto] items-center border-b border-gray-200 py-2"
-        >
-          <p class="text-left text-sm font-semibold font-inter text-gray-900">
-            Pourquoi est-il si difficile de détecter les fake news ?
-          </p>
-          <button class="text-blue-500 text-3xl font-bold">+</button>
+      <!-- Section ARCOM et Info Focus : une mission commune -->
+      <section
+        class="grid sm:grid-cols-2 place-items-center gap-8 text-center sm:text-left w-4/5 p-4 space-y-4"
+      >
+        <div class="space-y-4 sm:order-2">
+          <img
+            src="img/illu-mission-section.png"
+            alt="Illustration de la mission"
+            class="w-full max-w-[300px] h-auto"
+          />
         </div>
-        <div
-          class="grid grid-cols-[1fr_auto] items-center border-b border-gray-200 py-2"
-        >
-          <p class="text-left text-sm font-semibold font-inter text-gray-900">
-            Qu’est-ce que le biais de confirmation ?
+        <div class="w-5/6 p-4 space-y-4 sm:order-1">
+          <h2 class="section-h2 text-2xl font-bold text-gray-900">
+            Arcom et Info Focus : <br />
+            une mission commune
+          </h2>
+          <p class="section-text text-xs text-gray-700 leading-relaxed w-full">
+            Avec INFO FOCUS, nous mettons en lumière les biais qui affectent
+            votre compréhension de l’information. Ensemble, construisons une
+            culture numérique où chaque utilisateur joue un rôle actif dans la
+            lutte contre la désinformation.
           </p>
-          <button class="text-blue-500 text-3xl font-bold">+</button>
+          <button
+            class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-full"
+          >
+            En savoir plus
+          </button>
         </div>
+      </section>
+
+      <!-- Section Identifier vos biais -->
+      <section
+        class="grid place-items-center text-center w-4/5 p-4 space-y-4 bg-[#e9effd] sm:rounded-lg"
+      >
         <div
-          class="grid grid-cols-[1fr_auto] gap-2 items-center border-b border-gray-200 py-2"
+          class="justify-self-start w-full sm:w-3/5 sm:justify-center mx-auto"
         >
-          <p class="text-left text-sm font-semibold font-inter text-gray-900">
-            Pourquoi devrais-je varier mes sources d’information ?
-          </p>
-          <button class="text-blue-500 text-3xl font-bold">+</button>
+          <img
+            src="./icons/test-section-icon.png"
+            alt=""
+            class="max-w-[54px] h-auto"
+          />
         </div>
+        <div class="grid place-items-center gap-6 sm:w-1/2">
+          <h2 class="section-h2 text-2xl font-bold text-gray-900">
+            Identifier vos biais
+          </h2>
+          <h3
+            class="section-h3 text-blue-600 text-lg font-semibold text-center"
+          >
+            Savez-vous si vos choix sont influencés par vos croyances ?
+          </h3>
+          <p class="section-text text-xs text-gray-700 leading-relaxed">
+            Testez-vous en 3 minutes ! Ce mini-quiz vous aide à comprendre
+            comment vos biais peuvent influencer votre perception des
+            informations.
+          </p>
+          <button
+            class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-full"
+          >
+            Faites le test !
+          </button>
+        </div>
+      </section>
+
+      <!-- Section Des outils pour vérifier l'information -->
+      <section
+        class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4"
+      >
+        <h2 class="section-h2 text-2xl font-bold text-gray-900">
+          Des outils pour vérifier l'information
+        </h2>
+        <p class="section-text text-xs text-gray-700 leading-relaxed">
+          Explorez nos ressources pour développer votre esprit critique.
+        </p>
+        <div class="space-y-4">
+          <img
+            src="img/illu-tools-section.png"
+            alt="Illustration de la mission"
+            class="w-full max-w-[300px] h-auto"
+          />
+        </div>
+        <div class="grid sm:grid-cols-2 sm:grid-rows-2 gap-4 p-2">
+          <!-- Bloc 1 -->
+          <div
+            class="grid gap-2 sm:col-span-1 sm:row-span-2 bg-blue-50 p-4 rounded-lg text-left"
+          >
+            <h3 class="section-tools-h3 font-semibold text-gray-900">
+              Nos fact-checkers
+            </h3>
+            <p class="section-text text-gray-700 text-left">
+              Découvrez l'engagement de notre équipe de fact-checkers, dédiée à
+              la lutte contre la désinformation et à la promotion d'une
+              information fiable et transparente.
+            </p>
+            <p class="hidden sm:block section-text text-gray-700 text-left">
+              Nos experts analysent en profondeur les contenus pour identifier
+              et corriger les fausses nouvelles, s'appuient sur des sources
+              fiables, des outils innovants et une méthode rigoureuse, afin de
+              garantir une information accessible à tous.
+            </p>
+          </div>
+
+          <!-- Bloc 2 -->
+          <div
+            class="grid sm:col-span-1 sm:row-span-1 gap-2 bg-blue-50 p-4 rounded-lg text-left"
+          >
+            <h3 class="section-tool-h3 font-inter font-semibold text-gray-900">
+              Nos sources
+            </h3>
+            <p class="section-text text-gray-700 text-left">
+              Accédez à une liste de médias et de plateformes certifiés pour
+              élargir votre vision sur un sujet.
+            </p>
+          </div>
+
+          <!-- Bloc 3 -->
+          <div
+            class="grid col-span-2 sm:col-span-1 sm:row-span-1 gap-2 bg-blue-50 p-4 rounded-lg text-left"
+          >
+            <h3 class="section-tools-h3 font-semibold text-gray-900">
+              Tutoriels
+            </h3>
+            <p class="section-text text-gray-700">
+              Apprenez à détecter les fake news, analyser les sources, et sortir
+              des bulles d'information.
+            </p>
+          </div>
+        </div>
+        <button
+          class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-full"
+        >
+          Découvrir nos outils
+        </button>
+      </section>
+
+      <!-- Section Participez au mouvement -->
+      <section
+        class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4"
+      >
+        <div class="grid gap-6 w-5/6">
+          <h2 class="section-h2 text-2xl font-bold text-gray-900">
+            Participez au mouvement
+          </h2>
+          <h3
+            class="section-h3 text-blue-600 text-sm font-semibold text-center"
+          >
+            Vous n'êtes pas seuls dans cette lutte contre la désinformation.
+          </h3>
+          <p
+            class="hidden sm:block section-text text-xs text-gray-700 leading-relaxed"
+          >
+            Rejoignez une communauté d’utilisateurs engagés. Partagez vos
+            expériences, apprenez des autres, et ensemble, créons un espace
+            informationnel plus sûr.
+          </p>
+        </div>
+
+        <div class="section-movement-card grid gap-4">
+          <div class="grid gap-2 bg-white shadow-lg p-4 rounded-lg">
+            <h3
+              class="text-lg font-bold text-gray-900 sm:text-blue-700 text-left"
+            >
+              Bob
+            </h3>
+            <p class="text-left text-sm text-gray-700">
+              “J'ai longtemps cru tout ce que je voyais en ligne. Grâce à
+              InfoFocus, j'ai appris à vérifier les sources . Maintenant,
+              j'analyse avant de partager et me sens plus confiant dans ma façon
+              de consommer l'information.”
+            </p>
+          </div>
+        </div>
+        <button
+          class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-full"
+        >
+          Donne ton avis !
+        </button>
+      </section>
+
+      <!-- Section Le saviez-vous ? -->
+      <section
+        class="section-info grid place-items-center w-full text-center p-4 space-y-4 bg-[#e9effd]"
+      >
         <div
-          class="grid grid-cols-[1fr_auto] items-center border-b border-gray-200 py-2"
+          class="justify-self-start w-full sm:w-1/5 sm:justify-center mx-auto"
         >
-          <p class="text-left text-sm font-semibold font-inter text-gray-900">
-            Pourquoi est-il si difficile de détecter les fake news ?
-          </p>
-          <button class="text-blue-500 text-3xl font-bold">+</button>
+          <img
+            src="./icons/stats-section-icon.png"
+            alt=""
+            class="max-w-[64px] h-auto"
+          />
         </div>
-      </div>
-    </section>
+        <div class="grid place-items-center gap-6 w-4/5 sm:w-1/3">
+          <h2 class="section-h2 text-2xl font-bold text-gray-900">
+            Le saviez-vous ?
+          </h2>
+          <h3
+            class="section-h3 text-blue-600 text-lg font-semibold text-center"
+          >
+            Quelques chiffres sur l'impact de la désinformations.
+          </h3>
+          <div
+            class="text-8xl font-bold text-[#015FE8] drop-shadow-[0_4px_4px_rgba(1,95,232,0.2)] font-inter"
+          >
+            <span>5%</span>
+          </div>
+          <p
+            class="section-text text-xs text-gray-700 leading-relaxed font-inter"
+          >
+            Seulement 5% des utilisateurs vérifient systématiquement les
+            informations qu’ils partagent en ligne.
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ section -->
+      <section
+        class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4"
+      >
+        <h2 class="section-h2 text-2xl font-bold text-gray-900">Notre FAQ</h2>
+        <p class="section-text text-xs text-gray-700 leading-relaxed">
+          Comprendre pour mieux agir : cette section répond à vos questions.
+        </p>
+        <div class="grid gap-2 sm:w-1/2">
+          <div
+            class="grid grid-cols-[1fr_auto] items-center border-b border-gray-200 py-2"
+          >
+            <p class="text-left text-sm font-semibold font-inter text-gray-900">
+              Pourquoi est-il si difficile de détecter les fake news ?
+            </p>
+            <button class="text-blue-500 text-3xl font-bold">+</button>
+          </div>
+          <div
+            class="grid grid-cols-[1fr_auto] items-center border-b border-gray-200 py-2"
+          >
+            <p class="text-left text-sm font-semibold font-inter text-gray-900">
+              Qu’est-ce que le biais de confirmation ?
+            </p>
+            <button class="text-blue-500 text-3xl font-bold">+</button>
+          </div>
+          <div
+            class="grid grid-cols-[1fr_auto] gap-2 items-center border-b border-gray-200 py-2"
+          >
+            <p class="text-left text-sm font-semibold font-inter text-gray-900">
+              Pourquoi devrais-je varier mes sources d’information ?
+            </p>
+            <button class="text-blue-500 text-3xl font-bold">+</button>
+          </div>
+          <div
+            class="grid grid-cols-[1fr_auto] items-center border-b border-gray-200 py-2"
+          >
+            <p class="text-left text-sm font-semibold font-inter text-gray-900">
+              Pourquoi est-il si difficile de détecter les fake news ?
+            </p>
+            <button class="text-blue-500 text-3xl font-bold">+</button>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="grid gap-6 w-screen bg-blue-600 text-white p-8">
       <div class=""></div>
@@ -447,6 +706,6 @@
       </div>
     </footer>
 
-    <script src="./script/"></script>
+    <script src="./script/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,12 @@
+# Exclure le dossier node_modules
+node_modules/
+
+# Exclure les fichiers de configuration locales
+package-lock.json
+
+# Exclure les fichiers système
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
