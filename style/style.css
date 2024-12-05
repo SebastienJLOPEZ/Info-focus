@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Style - H2 - Section */
+.section-h2 {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.section-h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+}
+
+/* Style - Text - Section */
+.section-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+/* Style - Button - Section */
+.section-button {
+  width: 100%;
+  max-width: 200px;
+  padding: 14px 24px;
+}
+
+@media (min-width: 768px) {
+  .section-button {
+    width: auto;
+    padding: 12px 16px;
+  }
+}
+
+/* Style - H3 - Section Tools */
+.section-tools-h3 {
+  font-size: 1.1rem;
+}
+
+/* Style - Card - Section Movement */
+.section-movement-card {
+  width: 334px;
+  height: 417px;
+}

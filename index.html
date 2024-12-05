@@ -1,195 +1,448 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr-FR">
   <head>
+    <!-- SEO -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Découvrez InfoFocus, un média qui vous aide à dépasser vos biais cognitifs pour adopter une vérification de l’information éclairée. Ensemble, sensibilisons aux dangers de la désinformation et apprenons à nous en prémunir."
+    />
+    <meta
+      name="keywords"
+      content="désinformation, biais cognitifs, InfoFocus, vérification d’information, ARCOM, sensibilisation, esprit critique, information objective"
+    />
+    <meta name="author" content="InfoFocus" />
+
+    <!-- Accessibility -->
+    <meta http-equiv="content-language" content="fr" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="info-focus.vercel.app" />
+    <meta name="gdpr" content="Compliant" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import files -->
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="./style/output.css" />
-    <title>Document</title>
+    <title>InfoFocus • Doutes de tes certitudes</title>
   </head>
-  <body>
-    <header>
-      <div class="logo">
+  <body class="grid gap-8 place-items-center">
+    <header class="">
+      <div class=""></div>
+      <div>
         <img src="./icons/logo.png" alt="" />
       </div>
-      <nav class="navbar">
-        <ul>
-          <li><a href="#a-propos">À propos</a></li>
-          <li><a href="#outils-interactifs">Outils interactifs</a></li>
-          <li><a href="#section-participative">Section participative</a></li>
-          <li><a href="#se-documenter">Se documenter</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="book-icon"></div>
     </header>
-    <section
-      class="control-info flex flex-col items-center bg-gray-50 min-h-screen p-4"
-    >
-      <div class="content text-center mt-6 px-4">
-        <h2 class="text-xl font-bold text-blue-600">
-          Prenez le contrôle de l'info
+
+    <!-- Section Vidéo -->
+    <section class="grid place-items-center w-screen h-screen bg-indigo-900">
+      <h2 class="text-4xl font-bold text-white">Vidéo Motion</h2>
+    </section>
+
+    <!-- Section Campagne de sensibilisation -->
+    <section class="md:w-5/6 grid gap-4 p-6 place-items-center text-center">
+      <h3
+        class="justify-self-start w-full text-lg font-medium text-blue-500 text-left"
+      >
+        Actualité
+      </h3>
+      <div class="w-5/6 p-4 space-y-4">
+        <h2 class="section-h2 text-2xl font-bold text-gray-900">
+          Campagne de sensibilisation
         </h2>
-        <p class="mt-4 text-gray-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          sollicitudin accumsan ex sed faucibus. Cras sit amet aliquet sem. Sed
-          volutpat, diam non ultricies tempus, mauris enim lacinia est, eget
-          congue justo justo vitae odio.
+        <p class="section-text text-xs text-gray-700 leading-relaxed">
+          Découvrez comment les biais cognitifs, comme le biais de confirmation,
+          influencent votre perception de l’information. Trop souvent, nous
+          cherchons à conforter nos croyances plutôt qu’à vérifier les faits.
+          Regardez notre vidéo explicative pour apprendre à dépasser ces biais
+          et mieux discerner la vérité.
         </p>
-        <div
-          class="bg-gray-100 mt-6 p-6 rounded-lg shadow-md flex justify-center items-center"
-        >
-          <div class="w-12 h-12 bg-blue-200 rounded">
-            <!-- Icône image -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-full w-full text-blue-500"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2ZM7 15l2.5-3.5L11 13l3.5-5L17 15H7Z"
-              />
-            </svg>
-          </div>
-        </div>
         <button
-          class="verify-btn mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-blue-700"
+          class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
         >
-          Commencer à vérifier
+          Voir notre vidéo
         </button>
       </div>
     </section>
 
-    <section class="mission-section">
-      <div class="content">
-        <div class="image-placeholder">
-          <img src="#" alt="Image placeholder" />
-        </div>
-        <h2>Arcom et Info Focus : une mission commune</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          sollicitudin accumsan ex sed faucibus. Cras sit amet aliquet sem. Sed
-          volutpat, diam non ultricies tempus, mauris enim lacinia est, eget
-          congue justo justo vitae odio.
+    <!-- Section ARCOM et Info Focus : une mission commune -->
+    <section
+      class="grid sm:grid-cols-2 place-items-center gap-8 text-center sm:text-left w-4/5 p-4 space-y-4"
+    >
+      <div class="space-y-4 sm:order-2">
+        <img
+          src="img/illu-mission-section.png"
+          alt="Illustration de la mission"
+          class="w-full max-w-[300px] h-auto"
+        />
+      </div>
+      <div class="w-5/6 p-4 space-y-4 sm:order-1">
+        <h2 class="section-h2 text-2xl font-bold text-gray-900">
+          Arcom et Info Focus : <br />
+          une mission commune
+        </h2>
+        <p class="section-text text-xs text-gray-700 leading-relaxed w-full">
+          Avec INFO FOCUS, nous mettons en lumière les biais qui affectent votre
+          compréhension de l’information. Ensemble, construisons une culture
+          numérique où chaque utilisateur joue un rôle actif dans la lutte
+          contre la désinformation.
         </p>
-        <button class="cta-button">Lorem ipsum</button>
+        <button
+          class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
+        >
+          En savoir plus
+        </button>
       </div>
     </section>
 
-    <section class="quiz-section">
-      <div class="quiz-box">
-        <h2>Identifier vos biais<br />(test interactif)</h2>
-        <p>mini quiz</p>
-        <button class="quiz-button">Faites le test !</button>
+    <!-- Section Identifier vos biais -->
+    <section
+      class="grid place-items-center text-center w-4/5 p-4 space-y-4 bg-[#e9effd] sm:rounded-lg"
+    >
+      <div class="justify-self-start w-full sm:w-3/5 sm:justify-center mx-auto">
+        <img
+          src="./icons/test-section-icon.png"
+          alt=""
+          class="max-w-[54px] h-auto"
+        />
+      </div>
+      <div class="grid place-items-center gap-6 sm:w-1/2">
+        <h2 class="section-h2 text-2xl font-bold text-gray-900">
+          Identifier vos biais
+        </h2>
+        <h3 class="section-h3 text-blue-600 text-lg font-semibold text-center">
+          Savez-vous si vos choix sont influencés par vos croyances ?
+        </h3>
+        <p class="section-text text-xs text-gray-700 leading-relaxed">
+          Testez-vous en 3 minutes ! Ce mini-quiz vous aide à comprendre comment
+          vos biais peuvent influencer votre perception des informations.
+        </p>
+        <button
+          class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
+        >
+          Faites le test !
+        </button>
       </div>
     </section>
 
-    <section class="tools-section">
-      <h2>Des outils pour vérifier l'information</h2>
-      <div class="tools-container">
-        <div class="tool-card">
-          <h3>Nos fact-checkers</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+    <!-- Section Des outils pour vérifier l'information -->
+    <section
+      class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4"
+    >
+      <h2 class="section-h2 text-2xl font-bold text-gray-900">
+        Des outils pour vérifier l'information
+      </h2>
+      <p class="section-text text-xs text-gray-700 leading-relaxed">
+        Explorez nos ressources pour développer votre esprit critique.
+      </p>
+      <div class="space-y-4">
+        <img
+          src="img/illu-tools-section.png"
+          alt="Illustration de la mission"
+          class="w-full max-w-[300px] h-auto"
+        />
+      </div>
+      <div class="grid sm:grid-cols-2 sm:grid-rows-2 gap-4 p-4">
+        <!-- Bloc 1 -->
+        <div
+          class="grid gap-2 sm:col-span-1 sm:row-span-2 bg-blue-50 p-4 rounded-lg text-left"
+        >
+          <h3 class="section-tools-h3 font-semibold text-gray-900">
+            Nos fact-checkers
+          </h3>
+          <p class="section-text text-gray-700 text-left">
+            Découvrez l'engagement de notre équipe de fact-checkers, dédiée à la
+            lutte contre la désinformation et à la promotion d'une information
+            fiable et transparente.
+          </p>
+          <p class="hidden sm:block section-text text-gray-700 text-left">
+            Nos experts analysent en profondeur les contenus pour identifier et
+            corriger les fausses nouvelles, s'appuient sur des sources fiables,
+            des outils innovants et une méthode rigoureuse, afin de garantir une
+            information accessible à tous.
           </p>
         </div>
-        <div class="tool-card">
-          <h3>Nos sources</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur</p>
+
+        <!-- Bloc 2 -->
+        <div
+          class="grid sm:col-span-1 sm:row-span-1 gap-2 bg-blue-50 p-4 rounded-lg text-left"
+        >
+          <h3 class="section-tool-h3 font-inter font-semibold text-gray-900">
+            Nos sources
+          </h3>
+          <p class="section-text text-gray-700 text-left">
+            Accédez à une liste de médias et de plateformes certifiés pour
+            élargir votre vision sur un sujet.
+          </p>
         </div>
-        <div class="tool-card">
-          <h3>Tutoriels</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur</p>
+
+        <!-- Bloc 3 -->
+        <div
+          class="grid col-span-2 sm:col-span-1 sm:row-span-1 gap-2 bg-blue-50 p-4 rounded-lg text-left"
+        >
+          <h3 class="section-tools-h3 font-semibold text-gray-900">
+            Tutoriels
+          </h3>
+          <p class="section-text text-gray-700">
+            Apprenez à détecter les fake news, analyser les sources, et sortir
+            des bulles d'information.
+          </p>
         </div>
       </div>
-      <button class="tools-button">Découvrir nos outils</button>
+      <button
+        class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
+      >
+        Découvrir nos outils
+      </button>
     </section>
 
-    <section class="movement-section">
-      <h2>Participez au mouvement</h2>
-      <p>Vous n'êtes pas seuls dans cette lutte contre la désinformation.</p>
-      <div class="profiles-container">
-        <div class="profile-card">
-          <div class="profile-image"></div>
-          <h3>Bob</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur</p>
+    <!-- Section Participez au mouvement -->
+    <section
+      class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4"
+    >
+      <div class="grid gap-6 w-3/5">
+        <h2 class="section-h2 text-2xl font-bold text-gray-900">
+          Participez au mouvement
+        </h2>
+        <h3 class="section-h3 text-blue-600 text-xs font-semibold text-center">
+          Vous n'êtes pas seuls dans cette lutte contre la désinformation.
+        </h3>
+        <p
+          class="hidden sm:block section-text text-xs text-gray-700 leading-relaxed"
+        >
+          Rejoignez une communauté d’utilisateurs engagés. Partagez vos
+          expériences, apprenez des autres, et ensemble, créons un espace
+          informationnel plus sûr.
+        </p>
+      </div>
+
+      <div class="section-movement-card grid gap-4">
+        <div class="grid gap-2 bg-white shadow-lg p-4 rounded-lg">
+          <h3
+            class="text-lg font-bold text-gray-900 sm:text-blue-700 text-left"
+          >
+            Bob
+          </h3>
+          <p class="text-left text-sm text-gray-700">
+            “J'ai longtemps cru tout ce que je voyais en ligne. Grâce à
+            InfoFocus, j'ai appris à vérifier les sources . Maintenant,
+            j'analyse avant de partager et me sens plus confiant dans ma façon
+            de consommer l'information.”
+          </p>
         </div>
-        <div class="profile-card">
-          <div class="profile-image"></div>
-          <h3>Bob</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur</p>
+      </div>
+      <button
+        class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-2xl"
+      >
+        Donne ton avis !
+      </button>
+    </section>
+
+    <!-- Section Le saviez-vous ? -->
+    <section
+      class="section-info grid place-items-center w-full text-center p-4 space-y-4 bg-[#e9effd]"
+    >
+      <div class="justify-self-start w-full sm:w-1/5 sm:justify-center mx-auto">
+        <img
+          src="./icons/stats-section-icon.png"
+          alt=""
+          class="max-w-[64px] h-auto"
+        />
+      </div>
+      <div class="grid place-items-center gap-6 w-4/5 sm:w-1/3">
+        <h2 class="section-h2 text-2xl font-bold text-gray-900">
+          Le saviez-vous ?
+        </h2>
+        <h3 class="section-h3 text-blue-600 text-lg font-semibold text-center">
+          Quelques chiffres sur l'impact de la désinformations.
+        </h3>
+        <div
+          class="text-8xl font-bold text-[#015FE8] drop-shadow-[0_4px_4px_rgba(1,95,232,0.2)] font-inter"
+        >
+          <span>5%</span>
         </div>
-        <div class="profile-card">
-          <div class="profile-image"></div>
-          <h3>Bob</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur</p>
-        </div>
+        <p
+          class="section-text text-xs text-gray-700 leading-relaxed font-inter"
+        >
+          Seulement 5% des utilisateurs vérifient systématiquement les
+          informations qu’ils partagent en ligne.
+        </p>
       </div>
     </section>
 
-    <section class="did-you-know">
-      <h2>Le saviez-vous ?</h2>
-      <div class="percentage"><span>%</span><span>5</span></div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-        sollicitudin accumsan ex sed faucibus. Cras sit amet aliquet sem.
+    <!-- FAQ section -->
+    <section
+      class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4"
+    >
+      <h2 class="section-h2 text-2xl font-bold text-gray-900">Notre FAQ</h2>
+      <p class="section-text text-xs text-gray-700 leading-relaxed">
+        Comprendre pour mieux agir : cette section répond à vos questions.
       </p>
-      <div class="dots">
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="grid gap-2 sm:w-1/2">
+        <div
+          class="grid grid-cols-[1fr_auto] items-center border-b border-gray-200 py-2"
+        >
+          <p class="text-left text-sm font-semibold font-inter text-gray-900">
+            Pourquoi est-il si difficile de détecter les fake news ?
+          </p>
+          <button class="text-blue-500 text-3xl font-bold">+</button>
+        </div>
+        <div
+          class="grid grid-cols-[1fr_auto] items-center border-b border-gray-200 py-2"
+        >
+          <p class="text-left text-sm font-semibold font-inter text-gray-900">
+            Qu’est-ce que le biais de confirmation ?
+          </p>
+          <button class="text-blue-500 text-3xl font-bold">+</button>
+        </div>
+        <div
+          class="grid grid-cols-[1fr_auto] gap-2 items-center border-b border-gray-200 py-2"
+        >
+          <p class="text-left text-sm font-semibold font-inter text-gray-900">
+            Pourquoi devrais-je varier mes sources d’information ?
+          </p>
+          <button class="text-blue-500 text-3xl font-bold">+</button>
+        </div>
+        <div
+          class="grid grid-cols-[1fr_auto] items-center border-b border-gray-200 py-2"
+        >
+          <p class="text-left text-sm font-semibold font-inter text-gray-900">
+            Pourquoi est-il si difficile de détecter les fake news ?
+          </p>
+          <button class="text-blue-500 text-3xl font-bold">+</button>
+        </div>
       </div>
-      <div class="video-placeholder">
-        <div class="play-button">&#9658;</div>
-      </div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-        sollicitudin accumsan ex sed faucibus. Cras sit amet aliquet sem. Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
     </section>
 
-    <footer class="footer">
-      <div class="newsletter">
-        <h2>INFO FOCUS.</h2>
-        <p>Abonnez-vous à notre newsletter</p>
-        <form>
-          <input type="email" placeholder="E-mail" required />
-          <button type="submit">Envoyer</button>
+    <footer class="grid gap-6 w-screen bg-blue-600 text-white p-8">
+      <div class=""></div>
+      <div class="">
+        <h2 class="text-3xl font-bold">INFO FOCUS.</h2>
+        <p class="text-sm py-4 sm:text-xl sm:font-bold">
+          Abonnez-vous à notre newsletter
+        </p>
+        <form class="grid grid-cols-[1fr_auto] gap-2 sm:w-1/2">
+          <input
+            type="email"
+            placeholder="E-mail"
+            required
+            class="px-4 py-2 text-gray-800"
+          />
+          <button type="submit" class="px-4 py-2 bg-gray-900 text-white">
+            Envoyer
+          </button>
         </form>
       </div>
-      <div class="footer-links">
-        <div class="section">
-          <h3>Section 1</h3>
-          <ul>
-            <li><a href="#">Lien 1</a></li>
-            <li><a href="#">Lien 2</a></li>
-            <li><a href="#">Lien 3</a></li>
-            <li><a href="#">Lien 4</a></li>
+      <div class="grid gap-6 text-left sm:grid-cols-2 sm:w-1/2">
+        <div class="">
+          <h3 class="text-lg font-semibold py-4">Découvrir InfoFocus</h3>
+          <ul class="grid gap-2 text-sm font-inter sm:text-xs">
+            <li><a href="#">À propos de nous</a></li>
+            <li><a href="#">Notre mission</a></li>
+            <li><a href="#">Partenariats</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
-        <div class="section">
-          <h3>Section 2</h3>
-          <ul>
-            <li><a href="#">Lien 1</a></li>
-            <li><a href="#">Lien 2</a></li>
-            <li><a href="#">Lien 3</a></li>
+        <div class="">
+          <h3 class="text-lg font-semibold py-4">Ressources et outils</h3>
+          <ul class="grid gap-2 text-sm font-inter sm:text-xs">
+            <li><a href="#">Nos ressources</a></li>
+            <li><a href="#">Outils interactifs</a></li>
+            <li><a href="#">Vidéos explicatives</a></li>
           </ul>
         </div>
       </div>
       <div class="social-media">
-        <p>Nous suivre</p>
-        <div class="icons">
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
+        <h3 class="text-lg font-semibold py-3">Nous suivre</h3>
+        <div class="grid grid-cols-5 gap-2 justify-center w-1/2 my-2 sm:w-1/5">
+          <div class="youtube">
+            <svg
+              width="20"
+              height="15"
+              viewBox="0 0 20 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1097 0.87302H4.03008C1.85536 0.87302 0.09375 2.61564 0.09375 4.76566V10.2433C0.09375 12.3933 1.85631 14.1369 4.03008 14.1369H15.1097C17.2844 14.1369 19.0461 12.3933 19.0461 10.2433V4.76566C19.0461 2.61564 17.2835 0.87207 15.1097 0.87207V0.87302ZM12.4478 7.77038L7.26556 10.2157C7.23395 10.231 7.199 10.2379 7.16398 10.236C7.12895 10.2341 7.09497 10.2234 7.06521 10.2048C7.03545 10.1862 7.01087 10.1604 6.99377 10.1298C6.97666 10.0991 6.96758 10.0647 6.96737 10.0296V4.98788C6.968 4.95263 6.97755 4.9181 6.99512 4.88753C7.01269 4.85695 7.03771 4.83133 7.06786 4.81303C7.098 4.79473 7.13229 4.78437 7.16752 4.78289C7.20276 4.78142 7.23779 4.78889 7.26936 4.8046L12.4526 7.40191C12.4871 7.41913 12.5161 7.44573 12.5362 7.47867C12.5562 7.5116 12.5666 7.54953 12.5661 7.58811C12.5656 7.62668 12.5543 7.66434 12.5334 7.69674C12.5124 7.72915 12.4828 7.755 12.4478 7.77133V7.77038Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div class="facebook">
+            <svg
+              width="10"
+              height="19"
+              viewBox="0 0 10 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.77125 3.67921V6.28887H0.858643V9.47972H2.77125V18.963H6.69713V9.48067H9.33243C9.33243 9.48067 9.57934 7.95077 9.699 6.27747H6.71328V4.09516C6.71328 3.76943 7.14062 3.33069 7.56417 3.33069H9.7047V0.00878906H6.79495C2.67344 0.00878906 2.77125 3.20248 2.77125 3.67921V3.67921Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div class="twitter">
+            <svg
+              width="20"
+              height="17"
+              viewBox="0 0 20 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.0595 2.71865C18.3477 3.02955 17.5937 3.2334 16.8221 3.32358C17.632 2.84803 18.241 2.09388 18.5353 1.20205C17.768 1.6487 16.9311 1.9633 16.0596 2.13271C15.6926 1.7483 15.2511 1.44268 14.7621 1.23451C14.2731 1.02633 13.7468 0.919969 13.2154 0.921901C11.0634 0.921901 9.31891 2.64078 9.31891 4.75851C9.31891 5.05861 9.3531 5.35205 9.41958 5.6322C7.87598 5.55878 6.36464 5.16441 4.98199 4.47422C3.59934 3.78404 2.37574 2.81322 1.38928 1.6237C1.04344 2.20717 0.861663 2.87324 0.863168 3.5515C0.86383 4.18584 1.02255 4.81001 1.32498 5.36762C1.62741 5.92522 2.06401 6.39868 2.59534 6.7452C1.97758 6.72525 1.37315 6.56032 0.83088 6.26372V6.3112C0.83088 8.17063 2.17464 9.72142 3.95525 10.0747C3.6206 10.1635 3.27585 10.2085 2.92962 10.2086C2.67796 10.2086 2.4339 10.1849 2.19554 10.1374C2.45012 10.9046 2.93732 11.5735 3.58946 12.0513C4.2416 12.529 5.02632 12.7917 5.83462 12.8031C4.44819 13.871 2.74617 14.4479 0.99612 14.4431C0.680834 14.4431 0.371246 14.4241 0.0664062 14.3899C1.85295 15.5207 3.92448 16.1195 6.0388 16.1164C13.2059 16.1164 17.1241 10.2694 17.1241 5.19916L17.1108 4.70248C17.8752 4.16467 18.5355 3.49248 19.0595 2.71865V2.71865Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div class="instagram">
+            <svg
+              width="20"
+              height="19"
+              viewBox="0 0 20 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3641 0.00878906H5.70034C4.20288 0.0105491 2.76727 0.606259 1.70849 1.66521C0.649714 2.72417 0.0542444 4.15988 0.0527344 5.65735V13.3211C0.0544944 14.8185 0.650204 16.2542 1.70916 17.3129C2.76812 18.3717 4.20383 18.9672 5.70129 18.9687H13.365C14.8625 18.9669 16.2981 18.3712 17.3569 17.3123C18.4157 16.2533 19.0111 14.8176 19.0126 13.3201V5.6564C19.0109 4.15893 18.4152 2.72332 17.3562 1.66454C16.2973 0.605769 14.8615 0.0102991 13.3641 0.00878906ZM17.1057 13.3201C17.1057 13.8115 17.0089 14.298 16.8209 14.752C16.6329 15.206 16.3573 15.6184 16.0098 15.9659C15.6624 16.3133 15.2499 16.5889 14.7959 16.777C14.342 16.965 13.8554 17.0618 13.3641 17.0618H5.70034C4.70816 17.0615 3.7567 16.6672 3.05521 15.9655C2.35372 15.2639 1.95965 14.3123 1.95965 13.3201V5.6564C1.9599 4.66422 2.35422 3.71276 3.05588 3.01127C3.75755 2.30978 4.70911 1.9157 5.70129 1.9157H13.365C14.3572 1.91595 15.3087 2.31027 16.0102 3.01194C16.7116 3.71361 17.1057 4.66517 17.1057 5.65735V13.3211V13.3201Z"
+                fill="white"
+              />
+              <path
+                d="M9.5323 4.58496C8.2326 4.58697 6.98673 5.10422 6.06781 6.02332C5.14889 6.94241 4.63189 8.1884 4.63013 9.488C4.63163 10.788 5.14866 12.0344 6.06781 12.9537C6.98696 13.873 8.2332 14.3903 9.5332 14.3921C10.8334 14.3906 12.0799 13.8734 12.9992 12.954C13.9186 12.0347 14.4357 10.7882 14.4372 9.488C14.4352 8.188 13.9177 6.9419 12.9982 6.02293C12.0787 5.10395 10.8323 4.58622 9.5323 4.58496ZM9.5323 12.4852C8.7376 12.4852 7.97554 12.1695 7.41365 11.6076C6.85175 11.0457 6.53609 10.2836 6.53609 9.489C6.53609 8.6944 6.85175 7.93227 7.41365 7.37038C7.97554 6.80849 8.7376 6.49282 9.5323 6.49282C10.3269 6.49282 11.089 6.80849 11.6509 7.37038C12.2128 7.93227 12.5284 8.6944 12.5284 9.489C12.5284 10.2836 12.2128 11.0457 11.6509 11.6076C11.089 12.1695 10.3269 12.4852 9.5323 12.4852Z"
+                fill="white"
+              />
+              <path
+                d="M14.4455 5.79672C15.0943 5.79672 15.6202 5.27077 15.6202 4.62199C15.6202 3.97321 15.0943 3.44727 14.4455 3.44727C13.7967 3.44727 13.2708 3.97321 13.2708 4.62199C13.2708 5.27077 13.7967 5.79672 14.4455 5.79672Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div class="linkedin">
+            <svg
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.993 11.1375V18.1451H14.9304V11.6067C14.9304 9.96376 14.3425 8.84317 12.8725 8.84317C11.75 8.84317 11.0814 9.5991 10.788 10.3294C10.6807 10.5905 10.6531 10.9543 10.6531 11.3199V18.1451H6.5886C6.5886 18.1451 6.64368 7.07206 6.5886 5.92392H10.6531V7.6561L10.6265 7.69598H10.6531V7.6561C11.1925 6.82515 12.1564 5.63713 14.315 5.63713C16.9883 5.63713 18.993 7.3845 18.993 11.1375V11.1375ZM2.33794 0.0332031C0.94859 0.0332031 0.0388184 0.944874 0.0388184 2.14429C0.0388184 3.31712 0.921999 4.25633 2.28476 4.25633H2.31135C3.72918 4.25633 4.60952 3.31712 4.60952 2.14429C4.58483 0.944874 3.73013 0.0332031 2.33889 0.0332031H2.33794ZM0.280031 18.1451H4.34266V5.92392H0.280031V18.1451Z"
+                fill="white"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="text-left text-sm border-t-2 py-4 sm:border-t-0">
         <p>InfoFocus © 2024. All rights reserved.</p>
       </div>
     </footer>
