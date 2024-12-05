@@ -1,0 +1,41 @@
+<div x-data="{
+  flipped: false,
+  elements: [
+    { frontText: 'First Element', backText: 'Back Text 1', backColor: 'bg-green-300' },
+    { frontText: 'Second Element', backText: 'Back Text 2', backColor: 'bg-yellow-300' },
+    { frontText: 'Third Element', backText: 'Back Text 3', backColor: 'bg-red-300' }
+  ],
+  currentElement: null,
+  randomElement() {
+    // Choose a random element only once during initialization
+    if (!this.currentElement) {
+      this.currentElement = this.elements[Math.floor(Math.random() * this.elements.length)];
+    }
+  },
+  init() {
+    this.randomElement(); // Initialize with a random element when the component is created
+  }
+}" x-init="init()" class="py-32 relative w-96 h-96 mx-auto mt-8 mb-8 cursor-pointer text-center font-bold tracking-light text-lg perspective-1000">
+
+<!-- Card Container: Both sides of the card -->
+<div class="absolute inset-0 transform transition-transform duration-500" :class="{'rotate-y-180': flipped}">
+
+<!-- Front Side -->
+<div class="absolute inset-0 bg-blue-300 rounded-lg shadow-lg transition-all duration-500" x-show="!flipped" style="backface-visibility: hidden;">
+  <div class="absolute inset-0 overflow-hidden py-16">
+    <p x-text="currentElement.frontText"></p>
+  </div>
+</div>
+
+<!-- Back Side -->
+<div class="absolute inset-0 rounded-lg shadow-lg transition-all duration-500" x-show="flipped" :class="currentElement.backColor" style="backface-visibility: hidden;">
+  <div class="absolute inset-0 overflow-hidden py-16">
+    <p x-text="currentElement.backText"></p>
+  </div>
+</div>
+
+</div>
+
+<!-- Flip Trigger -->
+<div class="absolute inset-0" @click="flipped = !flipped"></div>
+</div>
