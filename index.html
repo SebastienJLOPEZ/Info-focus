@@ -528,77 +528,62 @@
 
 
       <section class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4">
-        <div x-data="carousel()" class="flex items-center space-x-4">
-
-          <!-- Messages à gauche -->
-          <div class="flex space-x-2">
-            <template x-for="(msg, i) in leftMessages" :key="i">
-              <div 
-                class="bg-gray-300 text-center p-2 rounded cursor-pointer transition-all"
-                :class="{
-                  'text-sm w-16': i === 0,
-                  'text-xs w-12': i === 1,
-                  'text-[10px] w-8': i > 1
-                }"
-                x-text="msg.message"
-                @click="setMainMessage(leftMessages.length - i - 1)">
-              </div>
-            </template>
+        <section class="carousel-container w-full max-w-4xl mx-auto py-10" x-data="userCarousel({
+          messages: [
+              {text: 'Lorem ipsum dolor sit amet.', name:'Bob'},
+              {text: 'Consectetur adipiscing elit.', name:'Bob'},
+              {text: 'ed do eiusmod tempor incididunt ut labore.', name:'Bob'},
+              {text: 'Ut enim ad minim veniam.', name:'Bob'},
+              {text: 'Quis nostrud exercitation ullamco laboris.', name:'Bob'},
+              {text: 'Duis aute irure dolor in reprehenderit.', name:'Bob'},
+              {text: 'Excepteur sint occaecat cupidatat non proident.', name:'Bob'},
+              {text: 'Sunt in culpa qui officia deserunt mollit anim.', name:'Bob'},
+              {text: 'Velit esse cillum dolore eu fugiat nulla pariatur..', name:'Bob'},
+          ]
+      })">
+          <!-- Carousel -->
+          <div class="flex justify-center items-center space-x-4">
+              <template x-for="(message, index) in visibleMessages" :key="index">
+                  <div 
+                      @click="index === 2 ? next() : prev()" 
+                      :class="{
+                          'bg-gray-300 scale-110 shadow-lg cursor-pointer': index === 2,
+                          'bg-white opacity-75': index !== 2
+                      }"
+                      class="flex flex-col justify-center items-center text-center w-40 h-20 rounded-lg border border-gray-300 transition-all duration-300">
+                      <p class="text-sm font-medium text-blue-600" x-text="message.name"></p>
+                      <p class="text-sm font-medium text-gray-600" x-text="message.text"></p>
+                  </div>
+              </template>
           </div>
+      </section>
       
-          <!-- Message principal -->
-          <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-            <h2 class="text-lg font-semibold" x-text="mainMessage.message"></h2>
-            <p class="text-gray-500 mt-2" x-text="'- ' + mainMessage.author"></p>
-          </div>
-      
-          <!-- Messages à droite -->
-          <div class="flex space-x-2">
-            <template x-for="(msg, i) in rightMessages" :key="i">
-              <div 
-                class="bg-gray-300 text-center p-2 rounded cursor-pointer transition-all"
-                :class="{
-                  'text-sm w-16': i === 0,
-                  'text-xs w-12': i === 1,
-                  'text-[10px] w-8': i > 1
-                }"
-                x-text="msg.message"
-                @click="setMainMessage(i + 1)">
-              </div>
-            </template>
-          </div>
-        </div>
-      
-        <script>
-          function carousel() {
-            return {
-              messages: [
-                { message: "Bienvenue sur notre site!", author: "Admin" },
-                { message: "Profitez de nos offres.", author: "Marketing" },
-                { message: "Contactez-nous pour plus d'infos.", author: "Support" },
-                { message: "Suivez-nous sur les réseaux sociaux.", author: "Community Manager" },
-                { message: "Merci de votre visite!", author: "Admin" },
-              ],
-              mainIndex: 0,
-      
-              get mainMessage() {
-                return this.messages[this.mainIndex];
-              },
-      
-              get leftMessages() {
-                return this.messages.slice(0, this.mainIndex).reverse();
-              },
-      
-              get rightMessages() {
-                return this.messages.slice(this.mainIndex + 1);
-              },
-      
-              setMainMessage(index) {
-                this.mainIndex = index;
-              }
-            };
+      <script>
+          function userCarousel(config) {
+              return {
+                  messages: config.messages,
+                  centerIndex: 0, // Start with the first message in the center
+                  get visibleMessages() {
+                      const len = this.messages.length;
+                      return [
+                          this.messages[(this.centerIndex - 2 + len) % len],
+                          this.messages[(this.centerIndex - 1 + len) % len],
+                          this.messages[this.centerIndex],
+                          this.messages[(this.centerIndex + 1) % len],
+                          this.messages[(this.centerIndex + 2) % len],
+                      ];
+                  },
+                  next() {
+                      this.centerIndex = (this.centerIndex + 1) % this.messages.length;
+                  },
+                  prev() {
+                      this.centerIndex = 
+                          (this.centerIndex - 1 + this.messages.length) % this.messages.length;
+                  },
+              };
           }
-        </script>
+      </script>
+      
         
     </section>
     
