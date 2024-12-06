@@ -384,34 +384,30 @@
             comment vos biais peuvent influencer votre perception des
             informations.
           </p>
-          <section>
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 mt-2" x-data="{close() { $refs.dialogRef.close()},
             closeFromEvent(event) {
             }if (event.currentTarget === event.target) {
             $refs.dialogRef.close()}
             }">
              <button @click="$refs.dialogRef.showModal()" class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-full">Faites le test !</button>
-              <dialog $click="closeFromEvent(evet)" x-ref="dialogRef" class="bg-white rounded-lg shadow-lg p-4">
-                  <form method="dialog">
-                    <button @click="close()" class="px-3 py-2 bg-blue-500 text-white">X</button>
-                  </form>
-                  <div x-data="{ flipped: false }" class="py-32 relative w-96 h-96 mx-auto mt-8 mb-8 cursor-pointer text-center font-bold tracking-light text-lg perspective-1000">
+              <dialog @click="closeFromEvent(event)" x-ref="dialogRef" class="bg-white rounded-lg shadow-lg p-4">
+                  <div x-data="{ flipped: false }" class="py-32 relative w-96 h-96 mx-auto mt-4 mb-4 cursor-pointer text-center font-bold tracking-light text-lg perspective-1000">
                     <div x-show.transition.opacity.duration.400ms="!flipped" class="absolute inset-0 rounded-lg shadow-lg transition-transform transform" :class="flipped ? 'rotate-y-180' : ''" @click="flipped = true;">
-                      <div class="absolute inset-0 bg-blue-500 overflow-hidden py-16">
-                        Front
+                      <div class="absolute inset-0 bg-blue-500 overflow-hidden py-16 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">Front</span>
                       </div>
                     </div>
                     <div x-show.transition.opacity.duration.400ms="flipped" class="absolute inset-0 rounded-lg shadow-lg transition-transform transform rotate-y-180" @click="flipped = false;">
-                      <div class="absolute inset-0 bg-red-500 overflow-hidden py-16">
-                        Back
+                      <div class="absolute inset-0 bg-red-500 overflow-hidden py-16 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">Back</span>
                       </div>
                     </div>
                   </div>
-                  
+                  <form method="dialog">
+                    <button @click="close()" class="px-8 py-2 text-grey bg-blue-700 rounded-full">Fermer</button>
+                  </form>
                 </dialog>
             </div>
-            
-          </section>
         </div>
       </section>
 
@@ -530,40 +526,168 @@
         </button>
       </section>
 
+
+      <section class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4">
+        <div x-data="carousel()" class="flex items-center space-x-4">
+
+          <!-- Messages à gauche -->
+          <div class="flex space-x-2">
+            <template x-for="(msg, i) in leftMessages" :key="i">
+              <div 
+                class="bg-gray-300 text-center p-2 rounded cursor-pointer transition-all"
+                :class="{
+                  'text-sm w-16': i === 0,
+                  'text-xs w-12': i === 1,
+                  'text-[10px] w-8': i > 1
+                }"
+                x-text="msg.message"
+                @click="setMainMessage(leftMessages.length - i - 1)">
+              </div>
+            </template>
+          </div>
+      
+          <!-- Message principal -->
+          <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+            <h2 class="text-lg font-semibold" x-text="mainMessage.message"></h2>
+            <p class="text-gray-500 mt-2" x-text="'- ' + mainMessage.author"></p>
+          </div>
+      
+          <!-- Messages à droite -->
+          <div class="flex space-x-2">
+            <template x-for="(msg, i) in rightMessages" :key="i">
+              <div 
+                class="bg-gray-300 text-center p-2 rounded cursor-pointer transition-all"
+                :class="{
+                  'text-sm w-16': i === 0,
+                  'text-xs w-12': i === 1,
+                  'text-[10px] w-8': i > 1
+                }"
+                x-text="msg.message"
+                @click="setMainMessage(i + 1)">
+              </div>
+            </template>
+          </div>
+        </div>
+      
+        <script>
+          function carousel() {
+            return {
+              messages: [
+                { message: "Bienvenue sur notre site!", author: "Admin" },
+                { message: "Profitez de nos offres.", author: "Marketing" },
+                { message: "Contactez-nous pour plus d'infos.", author: "Support" },
+                { message: "Suivez-nous sur les réseaux sociaux.", author: "Community Manager" },
+                { message: "Merci de votre visite!", author: "Admin" },
+              ],
+              mainIndex: 0,
+      
+              get mainMessage() {
+                return this.messages[this.mainIndex];
+              },
+      
+              get leftMessages() {
+                return this.messages.slice(0, this.mainIndex).reverse();
+              },
+      
+              get rightMessages() {
+                return this.messages.slice(this.mainIndex + 1);
+              },
+      
+              setMainMessage(index) {
+                this.mainIndex = index;
+              }
+            };
+          }
+        </script>
+        
+    </section>
+    
+    
+    
+
       <!-- Section Le saviez-vous ? -->
       <section
         class="section-info grid place-items-center w-full text-center p-4 space-y-4 bg-[#e9effd]"
       >
         <div
-          class="justify-self-start w-full sm:w-1/5 sm:justify-center mx-auto"
+          class="justify-self-start w-full sm:w-1/4 sm:justify-center mx-auto"
         >
+        <div class="flex items-center flex-nowrap mb-2">
           <img
-            src="./icons/stats-section-icon.png"
-            alt=""
-            class="max-w-[64px] h-auto"
-          />
+          src="./icons/stats-section-icon.png"
+          alt=""
+          class="max-w-[64px] h-auto"
+        />
+        <h2 class="text-4xl font-bold text-gray-900">Le saviez-vous ?</h2>
         </div>
-        <div class="grid place-items-center gap-6 w-4/5 sm:w-1/3">
-          <h2 class="section-h2 text-2xl font-bold text-gray-900">
-            Le saviez-vous ?
-          </h2>
-          <h3
-            class="section-h3 text-blue-600 text-lg font-semibold text-center"
-          >
+
+          <h3 class="text-lg font-bold text-blue-600 text-center max-w-[90%] sm:max-w-full leading-tight">
             Quelques chiffres sur l'impact de la désinformations.
           </h3>
-          <div
-            class="text-8xl font-bold text-[#015FE8] drop-shadow-[0_4px_4px_rgba(1,95,232,0.2)] font-inter"
-          >
-            <span>5%</span>
-          </div>
-          <p
-            class="section-text text-xs text-gray-700 leading-relaxed font-inter"
-          >
-            Seulement 5% des utilisateurs vérifient systématiquement les
-            informations qu’ils partagent en ligne.
-          </p>
         </div>
+
+        <div x-data="carousel({ 
+          items: [
+              {name: '5%', text: 'Seulement 5% des utilisateurs vérifient systématiquement les informations qu’ils partagent en ligne.'},
+              {name: '6s', text: '6 secondes pour qu’une personne décide de partager un contenu en ligne.'},
+              {name: '59%', text: 'des Français reconnaissent ne jamais vérifier la fiabilité des informations qu’ils lisent en ligne.'},
+              {name: '59%', text: 'des Français reconnaissent ne jamais vérifier la fiabilité des informations qu’ils lisent en ligne.'},
+              {name: '8%', text: 'Seulement 8% des articles en ligne sont vérifiés.'}
+          ] 
+      })" 
+      x-init="checkScreen()" 
+      @resize.window="checkScreen()"
+      class="w-full mx-auto py-15 px-5">
+  
+        <!-- Desktop Layout -->
+        <div x-show="!isMobile">
+            <div class="grid grid-cols-3 gap-8 items-center">
+                <template x-for="item in visibleGroup" :key="item.name">
+                    <div class="flex flex-col items-center">
+                      <div class="text-6xl font-bold text-[#015FE8] drop-shadow-[0_4px_4px_rgba(1,95,232,0.2)]">
+                        <span><p x-text="item.name"></p></span>
+                        <div class="text-sm font-medium text-gray-700 mt-2
+                        overflow-hidden text-ellipsis
+                        line-clamp-3" x-text="item.text"></div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Navigation Circles -->
+            <div class="flex justify-center space-x-3 mt-6 gap-4">
+                <template x-for="(_, index) in groups" :key="index">
+                    <button 
+                        @click="setGroup(index)" 
+                        :class="currentGroupIndex === index 
+                        ? 'bg-blue-500 border border-black-500 text-white' 
+                        : 'bg-white border border-black-500 text-blue-500'"
+                        class="px-2 py-2 rounded-full">
+                    </button>
+                </template>
+            </div>
+        </div>
+  
+        <!-- Mobile Layout -->
+        <div x-show="isMobile" class="flex flex-col items-center">
+            <div class="flex flex-col items-center p-5">
+                <div>
+                  <div class="text-6xl font-bold text-[#015FE8] drop-shadow-[0_4px_4px_rgba(1,95,232,0.2)]">
+                    <span><p x-text="item.name"></p></span>
+                    <div class="text-lg font-medium text-gray-600 mt-2
+                        overflow-hidden text-ellipsis
+                        line-clamp-3" x-text="activeItem.text"></div>
+                </div>
+            </div>
+            <div class="flex justify-center space-x-2 mt-4">
+                <button @click="prev()" class="w-20 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                    <span>&larr;</span>
+                </button>
+                <button @click="next()" class="w-20 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                    <span>&rarr;</span>
+                </button>
+            </div>
+        </div>
+    </div>
       </section>
 
       <!-- FAQ section -->
@@ -739,5 +863,49 @@
 
     <!-- <script src="./script/main.js"></script> -->
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+      function carousel(config) {
+          const groupBy = (arr, size) => {
+              const grouped = [];
+              for (let i = 0; i < arr.length; i += size) {
+                  grouped.push(arr.slice(i, i + size));
+              }
+              return grouped;
+          };
+
+          return {
+              items: config.items,
+              groups: groupBy(config.items, 3),
+              currentGroupIndex: 0,
+              currentIndex: 0,
+              isMobile: false,
+
+              checkScreen() {
+                  this.isMobile = window.innerWidth < 768;
+              },
+
+              get activeItem() {
+                  return this.items[this.currentIndex];
+              },
+
+              get visibleGroup() {
+                  return this.groups[this.currentGroupIndex] || [];
+              },
+
+              setGroup(index) {
+                  this.currentGroupIndex = index;
+              },
+
+              next() {
+                  this.currentIndex = (this.currentIndex + 1) % this.items.length;
+              },
+
+              prev() {
+                  this.currentIndex =
+                      (this.currentIndex - 1 + this.items.length) % this.items.length;
+              },
+          };
+      }
+  </script>
   </body>
 </html>
