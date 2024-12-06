@@ -190,9 +190,8 @@
       x-data="{ showModal1: true, showModal2: false, showModal3: false, email: '', isEmailValid: false }"
       class="fixed inset-0 z-50 grid items-center justify-center bg-black/50"
     >
-      <!-- Modal 1-->
       <div
-        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+        class="fixed inset-0 z-50 grid place-items-center justify-center bg-black/50"
         id="popup"
         x-data="{ close: true }"
         x-show="close && showModal1"
@@ -200,7 +199,7 @@
       >
         <div class="bg-white w-11/12 max-w-md p-6 rounded-lg grid gap-6">
           <button
-            class="self-start justify-self-end text-gray-600 text-lg"
+            class="self-start justify-self-end text-gray-600 text-2xl"
             aria-label="Fermer la modale"
             @click="close = false"
           >
@@ -291,7 +290,7 @@
           </div>
         </div>
       </div>
-      <!-- Modal 2-->
+
       <div
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
         id="popup"
@@ -300,7 +299,7 @@
       >
         <div class="bg-white w-11/12 max-w-md p-6 rounded-lg grid gap-6">
           <button
-            class="self-start justify-self-end text-gray-600 text-lg"
+            class="self-start justify-self-end text-gray-600 text-2xl"
             aria-label="Fermer la modale"
             @click="close = false"
           >
@@ -389,7 +388,7 @@
           </div>
         </div>
       </div>
-      <!-- Modal 3-->
+
       <div
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
         id="popup"
@@ -398,7 +397,7 @@
       >
         <div class="bg-white w-11/12 max-w-md p-6 rounded-lg grid gap-6">
           <button
-            class="self-start justify-self-end text-gray-600 text-lg"
+            class="self-start justify-self-end text-gray-600 text-2xl"
             aria-label="Fermer la modale"
             @click="close = false"
           >
@@ -435,8 +434,19 @@
 
     <main class="grid gap-8 w-full place-items-center">
       <!-- Section Vidéo -->
-      <section class="grid place-items-center w-full h-screen bg-indigo-900">
-        <h2 class="text-4xl font-bold text-white">Vidéo Motion</h2>
+      <section class="grid place-items-center w-full h-96">
+        <div
+          class="w-full h-full bg-gray-100 shadow-md border-2 border-gray-200 overflow-hidden"
+        >
+          <iframe
+            src="https://www.youtube.com/embed/6Bzkm-S5wsk"
+            title="Vidéo YouTube - Exemple"
+            class="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
       </section>
 
       <!-- Section Campagne de sensibilisation -->
@@ -446,7 +456,7 @@
         >
           Actualité
         </h3>
-        <div class="w-5/6 p-4 space-y-4">
+        <div class="grid place-items-center gap-2 w-2/3 p-4 space-y-4">
           <h2 class="section-h2 text-2xl font-bold text-gray-900">
             Campagne de sensibilisation
           </h2>
@@ -457,11 +467,13 @@
             vérifier les faits. Regardez notre vidéo explicative pour apprendre
             à dépasser ces biais et mieux discerner la vérité.
           </p>
-          <button
+          <a
+            href="https://www.youtube.com/watch?v=PYHb9e5nJOE"
             class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-full"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Voir notre vidéo</a
           >
-            Voir notre vidéo
-          </button>
         </div>
       </section>
 
@@ -476,8 +488,10 @@
             class="w-full max-w-[300px] h-auto"
           />
         </div>
-        <div class="w-5/6 p-4 space-y-4 sm:order-1">
-          <h2 class="section-h2 text-2xl font-bold text-gray-900">
+        <div
+          class="grid place-items-start w-5/6 p-4 space-y-4 justify-start sm:order-1"
+        >
+          <h2 class="section-h2 text-2xl font-bold text-gray-900 text-left">
             Arcom et Info Focus : <br />
             une mission commune
           </h2>
@@ -487,11 +501,14 @@
             culture numérique où chaque utilisateur joue un rôle actif dans la
             lutte contre la désinformation.
           </p>
-          <button
+          <a
+            href="https://www.arcom.fr/"
             class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-full"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             En savoir plus
-          </button>
+          </a>
         </div>
       </section>
 
@@ -594,11 +611,14 @@
             </p>
           </div>
         </div>
-        <button
+        <a
+          href="https://dbkf.ontotext.com/#!/searchViewResults"
           class="section-button section-button w-2/3 max-w-xs px-4 py-2 text-white bg-blue-700 rounded-full"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Découvrir nos outils
-        </button>
+          En savoir plus
+        </a>
       </section>
 
       <!-- Section Participez au mouvement -->
