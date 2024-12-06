@@ -687,18 +687,106 @@
           >
             Quelques chiffres sur l'impact de la désinformations.
           </h3>
-          <div
-            class="text-8xl font-bold text-[#015FE8] drop-shadow-[0_4px_4px_rgba(1,95,232,0.2)] font-inter"
-          >
-            <span>5%</span>
-          </div>
-          <p
-            class="section-text text-xs text-gray-700 leading-relaxed font-inter"
-          >
-            Seulement 5% des utilisateurs vérifient systématiquement les
-            informations qu’ils partagent en ligne.
-          </p>
         </div>
+        <div x-data="carousel({ 
+          items: [
+              {name: '5%', text: 'Seulement 5% des utilisateurs vérifient systématiquement les informations qu’ils partagent en ligne.'},
+              {name: '6s', text: '6 secondes pour qu’une personne décide de partager un contenu en ligne.'},
+              {name: '59%', text: 'des Français reconnaissent ne jamais vérifier la fiabilité des informations qu’ils lisent en ligne.'},
+              {name: '2%', text: 'des Français n’utilise que les réseaux sociaux pour s’informer.'},
+              {name: '1.5', text: 'milliard de fake news sont publiés par jour.'}
+          ] 
+      })" 
+      x-init="checkScreen()" 
+      @resize.window="checkScreen()"
+      class="w-full mx-auto py-15 px-5">
+  
+        <!-- Desktop Layout -->
+        <div x-show="!isMobile">
+            <div class="grid grid-cols-3 gap-8 items-center">
+                <template x-for="item in visibleGroup" :key="item.name">
+                    <div class="flex flex-col items-center">
+                      <div class="text-6xl font-bold text-[#015FE8] drop-shadow-[0_4px_4px_rgba(1,95,232,0.2)]">
+                        <span><p x-text="item.name"></p></span>
+                        <div class="text-sm font-medium text-gray-700 mt-2
+                        overflow-hidden text-ellipsis
+                        line-clamp-3" x-text="item.text"></div>
+                    </div>
+                </template>
+            </div>
+            <!-- Navigation Circles -->
+            <div class="flex justify-center space-x-3 mt-6 gap-4">
+                <template x-for="(_, index) in groups" :key="index">
+                    <button 
+                        @click="setGroup(index)" 
+                        :class="currentGroupIndex === index 
+                        ? 'bg-blue-500 border border-black-500 text-white' 
+                        : 'bg-white border border-black-500 text-blue-500'"
+                        class="px-2 py-2 rounded-full">
+                    </button>
+                </template>
+            </div>
+        </div>
+  
+        <!-- Mobile Layout -->
+        <div x-show="isMobile" class="flex flex-col items-center">
+            <div class="flex flex-col items-center p-5">
+                <div>
+                  <div class="text-6xl font-bold text-[#015FE8] drop-shadow-[0_4px_4px_rgba(1,95,232,0.2)]">
+                    <span><p x-text="item.name"></p></span>
+                    <div class="text-lg font-medium text-gray-600 mt-2
+                        overflow-hidden text-ellipsis
+                        line-clamp-3" x-text="activeItem.text"></div>
+                </div>
+            </div>
+            <div class="flex justify-center space-x-2 mt-4">
+                <button @click="prev()" class="w-20 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                    <span>&larr;</span>
+                </button>
+                <button @click="next()" class="w-20 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                    <span>&rarr;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      function carousel(config) {
+          const groupBy = (arr, size) => {
+              const grouped = [];
+              for (let i = 0; i < arr.length; i += size) {
+                  grouped.push(arr.slice(i, i + size));
+              }
+              return grouped;
+          };
+          return {
+              items: config.items,
+              groups: groupBy(config.items, 3),
+              currentGroupIndex: 0,
+              currentIndex: 0,
+              isMobile: false,
+              checkScreen() {
+                  this.isMobile = window.innerWidth < 768;
+              },
+              get activeItem() {
+                  return this.items[this.currentIndex];
+              },
+              get visibleGroup() {
+                  return this.groups[this.currentGroupIndex] || [];
+              },
+              setGroup(index) {
+                  this.currentGroupIndex = index;
+              },
+              next() {
+                  this.currentIndex = (this.currentIndex + 1) % this.items.length;
+              },
+              prev() {
+                  this.currentIndex =
+                      (this.currentIndex - 1 + this.items.length) % this.items.length;
+              },
+          };
+      }
+  </script>
       </section>
 
       <!-- FAQ section -->
@@ -813,7 +901,7 @@
       </section>
     </main>
 
-    <footer class="grid gap-6 w-screen bg-blue-600 text-white p-8">
+    <footer class="grid gap-6 w-screen bg-blue-600 text-white p-8 px-12">
       <div class=""></div>
       <div class="">
         <h2 class="text-3xl font-bold">INFO FOCUS.</h2>
