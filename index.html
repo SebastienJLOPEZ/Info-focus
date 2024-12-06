@@ -525,71 +525,7 @@
           Donne ton avis !
         </button>
       </section>
-
-
-      <section class="grid place-items-center gap-6 text-center w-4/5 p-4 space-y-4">
-        <section class="carousel-container w-full max-w-4xl mx-auto py-10" x-data="userCarousel({
-          messages: [
-              {text: 'Lorem ipsum dolor sit amet.', name:'Bob'},
-              {text: 'Consectetur adipiscing elit.', name:'Bob'},
-              {text: 'ed do eiusmod tempor incididunt ut labore.', name:'Bob'},
-              {text: 'Ut enim ad minim veniam.', name:'Bob'},
-              {text: 'Quis nostrud exercitation ullamco laboris.', name:'Bob'},
-              {text: 'Duis aute irure dolor in reprehenderit.', name:'Bob'},
-              {text: 'Excepteur sint occaecat cupidatat non proident.', name:'Bob'},
-              {text: 'Sunt in culpa qui officia deserunt mollit anim.', name:'Bob'},
-              {text: 'Velit esse cillum dolore eu fugiat nulla pariatur..', name:'Bob'},
-          ]
-      })">
-          <!-- Carousel -->
-          <div class="flex justify-center items-center space-x-4">
-              <template x-for="(message, index) in visibleMessages" :key="index">
-                  <div 
-                      @click="index === 2 ? next() : prev()" 
-                      :class="{
-                          'bg-gray-300 scale-110 shadow-lg cursor-pointer': index === 2,
-                          'bg-white opacity-75': index !== 2
-                      }"
-                      class="flex flex-col justify-center items-center text-center w-40 h-20 rounded-lg border border-gray-300 transition-all duration-300">
-                      <p class="text-sm font-medium text-blue-600" x-text="message.name"></p>
-                      <p class="text-sm font-medium text-gray-600" x-text="message.text"></p>
-                  </div>
-              </template>
-          </div>
-      </section>
       
-      <script>
-          function userCarousel(config) {
-              return {
-                  messages: config.messages,
-                  centerIndex: 0, // Start with the first message in the center
-                  get visibleMessages() {
-                      const len = this.messages.length;
-                      return [
-                          this.messages[(this.centerIndex - 2 + len) % len],
-                          this.messages[(this.centerIndex - 1 + len) % len],
-                          this.messages[this.centerIndex],
-                          this.messages[(this.centerIndex + 1) % len],
-                          this.messages[(this.centerIndex + 2) % len],
-                      ];
-                  },
-                  next() {
-                      this.centerIndex = (this.centerIndex + 1) % this.messages.length;
-                  },
-                  prev() {
-                      this.centerIndex = 
-                          (this.centerIndex - 1 + this.messages.length) % this.messages.length;
-                  },
-              };
-          }
-      </script>
-      
-        
-    </section>
-    
-    
-    
-
       <!-- Section Le saviez-vous ? -->
       <section
         class="section-info grid place-items-center w-full text-center p-4 space-y-4 bg-[#e9effd]"
